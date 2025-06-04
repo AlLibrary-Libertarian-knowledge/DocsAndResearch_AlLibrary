@@ -1,26 +1,30 @@
 ```mermaid
 stateDiagram-v2
     [*] --> Draft
-    Draft --> UnderReview: Submit
-    UnderReview --> Verified: Pass Verification
-    UnderReview --> Draft: Reject
-    Verified --> Published: Approve
-    Published --> Archived: Deprecate
-    Published --> Updated: New Version
-    Updated --> Published: Approve Update
-    Archived --> [*]
+    Draft --> Processing: Add Document
+    Processing --> OCR: Scanned Document
+    Processing --> Language: Text Document
+    OCR --> Language: Text Extracted
+    Language --> Verifying: Language Processed
+    Verifying --> Verified: Content Valid
+    Verifying --> Rejected: Invalid Content
+    Verified --> Published: Share Content
+    Published --> Archived: Mark Archived
+    Archived --> Published: Restore
+    Rejected --> Draft: Edit Content
+    Published --> [*]: Delete
+    Archived --> [*]: Delete
 
-    state UnderReview {
+    state Verifying {
         [*] --> ContentCheck
-        ContentCheck --> SourceVerification
-        SourceVerification --> MetadataValidation
-        MetadataValidation --> [*]
+        ContentCheck --> SourceCheck
+        SourceCheck --> ContextCheck
+        ContextCheck --> [*]
     }
 
-    state Published {
-        [*] --> Available
-        Available --> Cached
-        Cached --> Replicated
-        Replicated --> [*]
+    state Processing {
+        [*] --> FormatCheck
+        FormatCheck --> ContentAnalysis
+        ContentAnalysis --> [*]
     }
 ```

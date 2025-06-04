@@ -1,54 +1,49 @@
 ```mermaid
 sequenceDiagram
-    %% Document Sharing Sequence
     participant User
-    participant Viewer as DocumentViewer
-    participant Store as ContentStore
-    participant IPFS as IPFSManager
-    participant Network as NetworkManager
-    participant Peer as Peer
+    participant UI
+    participant DocManager
+    participant P2PNode
+    participant OCR
+    participant Language
+    participant Storage
+    participant Network
 
-    %% Document Sharing
-    User->>Viewer: Share Document
-    activate Viewer
-    Viewer->>Store: Store Document
-    activate Store
-    Store->>IPFS: Add Content
-    activate IPFS
-    IPFS-->>Store: Return Content Hash
-    deactivate IPFS
-    Store-->>Viewer: Confirm Storage
-    deactivate Store
-    Viewer->>Network: Broadcast Availability
-    activate Network
-    Network->>Peer: Notify Peers
-    activate Peer
-    Peer-->>Network: Acknowledge
-    deactivate Peer
-    Network-->>Viewer: Confirm Broadcast
-    deactivate Network
-    Viewer-->>User: Share Complete
-    deactivate Viewer
+    %% Document Sharing Process
+    User->>UI: Add Document
+    UI->>DocManager: Process Document
+    DocManager->>OCR: Check if Scanned
+    OCR-->>DocManager: Text Content
+    DocManager->>Language: Detect Language
+    Language-->>DocManager: Language Info
+    DocManager->>Storage: Store Content
+    Storage-->>DocManager: Content Hash
+    DocManager->>P2PNode: Publish Content
+    P2PNode->>Network: Broadcast Availability
+    Network-->>P2PNode: Confirmation
+    P2PNode-->>DocManager: Success
+    DocManager-->>UI: Document Added
+    UI-->>User: Success Message
 
-    %% Document Retrieval
-    User->>Viewer: Request Document
-    activate Viewer
-    Viewer->>Network: Find Content
-    activate Network
-    Network->>Peer: Query Peers
-    activate Peer
-    Peer-->>Network: Content Location
-    deactivate Peer
-    Network-->>Viewer: Return Location
-    deactivate Network
-    Viewer->>IPFS: Get Content
-    activate IPFS
-    IPFS-->>Viewer: Return Content
-    deactivate IPFS
-    Viewer->>Store: Cache Content
-    activate Store
-    Store-->>Viewer: Confirm Cache
-    deactivate Store
-    Viewer-->>User: Display Document
-    deactivate Viewer
+    %% Document Retrieval Process
+    User->>UI: Search Document
+    UI->>DocManager: Search Request
+    DocManager->>P2PNode: Query Network
+    P2PNode->>Network: Search Request
+    Network-->>P2PNode: Results
+    P2PNode-->>DocManager: Search Results
+    DocManager->>Storage: Check Local Cache
+    alt Content in Cache
+        Storage-->>DocManager: Local Content
+    else Content Not in Cache
+        DocManager->>P2PNode: Request Content
+        P2PNode->>Network: Content Request
+        Network-->>P2PNode: Content
+        P2PNode->>Storage: Cache Content
+        Storage-->>DocManager: Content
+    end
+    DocManager->>Language: Process Language
+    Language-->>DocManager: Processed Content
+    DocManager-->>UI: Display Results
+    UI-->>User: Show Document
 ```
