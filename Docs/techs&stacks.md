@@ -44,7 +44,6 @@
   - Fine-grained reactivity
   - Better performance for desktop apps
   - Smaller attack surface
-- **TailwindCSS**: Utility-first CSS for rapid development
 - **State Management**: Built-in stores (no external dependencies needed)
 
 ### Key Frontend Libraries

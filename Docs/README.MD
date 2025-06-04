@@ -50,7 +50,6 @@ AlLibrary is a decentralized platform that leverages modern P2P technology to cr
 
   - Tauri v2
   - React/TypeScript
-  - TailwindCSS for UI
   - Progressive Web App capabilities
 
 - **Backend**
