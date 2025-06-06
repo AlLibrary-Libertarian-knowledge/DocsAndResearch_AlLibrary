@@ -2,12 +2,12 @@
 stateDiagram-v2
     [*] --> Draft
     Draft --> Processing: Add Document
-    Processing --> OCR: Scanned Document
-    Processing --> Language: Text Document
-    OCR --> Language: Text Extracted
-    Language --> Verifying: Language Processed
-    Verifying --> Verified: Content Valid
-    Verifying --> Rejected: Invalid Content
+    Processing --> SecurityCheck: Process Content
+    SecurityCheck --> ContentVerification: Security Pass
+    SecurityCheck --> Rejected: Security Fail
+    ContentVerification --> SourceVerification: Content Valid
+    SourceVerification --> Verified: Source Valid
+    SourceVerification --> Rejected: Invalid Source
     Verified --> Published: Share Content
     Published --> Archived: Mark Archived
     Archived --> Published: Restore
@@ -15,16 +15,31 @@ stateDiagram-v2
     Published --> [*]: Delete
     Archived --> [*]: Delete
 
-    state Verifying {
-        [*] --> ContentCheck
-        ContentCheck --> SourceCheck
-        SourceCheck --> ContextCheck
-        ContextCheck --> [*]
+    state SecurityCheck {
+        [*] --> VirusScan
+        VirusScan --> MalwareCheck
+        MalwareCheck --> IntegrityCheck
+        IntegrityCheck --> [*]
+    }
+
+    state ContentVerification {
+        [*] --> FormatCheck
+        FormatCheck --> ContentAnalysis
+        ContentAnalysis --> IntegrityCheck
+        IntegrityCheck --> [*]
+    }
+
+    state SourceVerification {
+        [*] --> SourceCheck
+        SourceCheck --> LocationCheck
+        LocationCheck --> TimestampCheck
+        TimestampCheck --> [*]
     }
 
     state Processing {
         [*] --> FormatCheck
         FormatCheck --> ContentAnalysis
-        ContentAnalysis --> [*]
+        ContentAnalysis --> LanguageDetection
+        LanguageDetection --> [*]
     }
 ```

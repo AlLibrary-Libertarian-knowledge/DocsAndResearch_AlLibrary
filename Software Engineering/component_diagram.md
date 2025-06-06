@@ -46,6 +46,10 @@ graph TB
         Source[Source Verification]
         Access[Access Control]
         Reputation[Peer Reputation]
+        Scanner[Security Scanner]
+        MalwareCheck[Malware Checker]
+        VirusScan[Virus Scanner]
+        IntegrityCheck[Integrity Checker]
     end
 
     %% Frontend Connections
@@ -83,4 +87,10 @@ graph TB
     Source --> Verify
     Access --> DocManager
     Reputation --> Network
+    Scanner --> DocManager
+    Scanner --> Store
+    MalwareCheck --> Scanner
+    VirusScan --> Scanner
+    IntegrityCheck --> Scanner
+    Scanner --> Verify
 ```

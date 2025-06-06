@@ -10,11 +10,11 @@ classDiagram
         +String hash
         +DateTime createdAt
         +DateTime updatedAt
-        +CulturalContext culturalContext
+        +String source
         +verifyContent()
         +updateVersion()
         +getContent()
-        +preserveContext()
+        +preserveOriginal()
     }
 
     class Content {
@@ -25,9 +25,11 @@ classDiagram
         +Long size
         +Language language
         +Boolean isScanned
+        +String originalHash
         +getHash()
         +validate()
         +extractText()
+        +verifyIntegrity()
     }
 
     class Metadata {
@@ -37,10 +39,11 @@ classDiagram
         +List~String~ tags
         +String source
         +Score credibility
-        +CulturalContext context
-        +HistoricalPeriod period
+        +String location
+        +DateTime timestamp
         +updateMetadata()
         +verifySource()
+        +trackChanges()
     }
 
     class Version {
@@ -49,23 +52,46 @@ classDiagram
         +List~Change~ changes
         +DateTime timestamp
         +String author
-        +CulturalContext context
+        +String source
         +VerificationStatus status
         +rollback()
         +compare()
         +verifyAuthenticity()
+        +trackModifications()
     }
 
-    class CulturalContext {
+    %% Security Classes
+    class SecurityScanner {
         +String id
-        +String region
-        +String language
-        +HistoricalPeriod period
-        +List~String~ relatedDocuments
-        +List~String~ sources
-        +addContext()
-        +getRelatedContent()
-        +preserveContext()
+        +List~ThreatType~ detectedThreats
+        +ScanResult scanResult
+        +scanContent()
+        +verifyIntegrity()
+        +checkMalware()
+        +validateSource()
+        +trackScans()
+    }
+
+    class ScanResult {
+        +String id
+        +Boolean isSafe
+        +List~Threat~ threats
+        +DateTime scanTime
+        +String scannerVersion
+        +getThreats()
+        +isClean()
+        +getScanDetails()
+    }
+
+    class Threat {
+        +String id
+        +ThreatType type
+        +Severity severity
+        +String description
+        +String location
+        +DateTime detectedAt
+        +getDetails()
+        +getRemediation()
     }
 
     %% P2P Network Classes
@@ -75,10 +101,12 @@ classDiagram
         +Status status
         +List~Capability~ capabilities
         +ReputationScore reputation
+        +String location
         +connect()
         +disconnect()
         +shareContent()
         +verifyPeer()
+        +maintainConnection()
     }
 
     class NetworkManager {
@@ -88,6 +116,7 @@ classDiagram
         +handleConnection()
         +broadcastMessage()
         +maintainNetwork()
+        +verifyNetwork()
     }
 
     class ContentRouter {
@@ -96,6 +125,7 @@ classDiagram
         +cacheContent()
         +optimizeRoute()
         +verifyRoute()
+        +trackDistribution()
     }
 
     %% Storage Classes
@@ -106,6 +136,7 @@ classDiagram
         +verify()
         +optimize()
         +preserveContent()
+        +trackStorage()
     }
 
     class IPFSManager {
@@ -114,16 +145,18 @@ classDiagram
         +pinContent()
         +garbageCollect()
         +verifyContent()
+        +maintainAvailability()
     }
 
     %% Processing Classes
-    class OCRProcessor {
+    class ContentProcessor {
         +String id
-        +List~Language~ supportedLanguages
-        +processImage()
-        +extractText()
-        +validateResults()
-        +preserveFormat()
+        +List~Format~ supportedFormats
+        +processContent()
+        +extractMetadata()
+        +validateContent()
+        +preserveOriginal()
+        +trackProcessing()
     }
 
     class LanguageProcessor {
@@ -131,8 +164,9 @@ classDiagram
         +List~Language~ supportedLanguages
         +detectLanguage()
         +translateContent()
-        +preserveContext()
-        +maintainOriginal()
+        +preserveOriginal()
+        +maintainIntegrity()
+        +trackChanges()
     }
 
     %% UI Classes
@@ -141,8 +175,9 @@ classDiagram
         +navigate()
         +search()
         +annotate()
-        +showContext()
-        +displayMetadata()
+        +showMetadata()
+        +displayHistory()
+        +trackViewing()
     }
 
     class SearchEngine {
@@ -150,19 +185,21 @@ classDiagram
         +filter()
         +sort()
         +suggest()
-        +contextualSearch()
-        +historicalSearch()
+        +verifyResults()
+        +trackSearches()
     }
 
     %% Relationships
     Document "1" -- "1" Content
     Document "1" -- "1" Metadata
     Document "1" -- "*" Version
-    Document "1" -- "1" CulturalContext
+    Content "1" -- "1" SecurityScanner
+    SecurityScanner "1" -- "*" ScanResult
+    ScanResult "1" -- "*" Threat
     NetworkManager "1" -- "*" Peer
     ContentRouter "1" -- "1" NetworkManager
     ContentStore "1" -- "1" IPFSManager
     DocumentViewer "1" -- "1" SearchEngine
-    Content "1" -- "0..1" OCRProcessor
+    Content "1" -- "0..1" ContentProcessor
     Content "1" -- "0..1" LanguageProcessor
 ```

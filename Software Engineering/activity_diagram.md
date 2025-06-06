@@ -1,33 +1,61 @@
 ```mermaid
-flowchart TD
-    Start([Start Search]) --> Input[Enter Search Query]
-    Input --> Validate{Validate Query}
-    Validate -->|Invalid| Input
-    Validate -->|Valid| Process[Process Query]
+graph TB
+    %% Document Processing Flow
+    Start([Start]) --> AddDoc[Add Document]
+    AddDoc --> SecurityScan[Security Scan]
+    SecurityScan --> ThreatCheck{Threats Found?}
+    ThreatCheck -->|Yes| RejectContent[Reject Content]
+    ThreatCheck -->|No| ProcessContent[Process Content]
+    ProcessContent --> VerifyContent[Verify Content]
+    VerifyContent --> CheckSource[Check Source]
+    CheckSource --> StoreContent[Store Content]
+    StoreContent --> PublishContent[Publish Content]
+    PublishContent --> End([End])
 
-    Process --> LocalSearch[Search Local Cache]
-    LocalSearch --> CheckResults{Results Found?}
+    %% Security Scanning Flow
+    SecurityScan --> VirusScan[Virus Scan]
+    VirusScan --> MalwareCheck[Malware Check]
+    MalwareCheck --> IntegrityCheck[Integrity Check]
+    IntegrityCheck --> SecurityScan
 
-    CheckResults -->|Yes| RankLocal[Rank Local Results]
-    CheckResults -->|No| NetworkSearch[Search Network]
+    %% Content Verification Flow
+    VerifyContent --> FormatCheck[Check Format]
+    FormatCheck --> ContentAnalysis[Analyze Content]
+    ContentAnalysis --> IntegrityCheck[Check Integrity]
+    IntegrityCheck --> VerifyContent
 
-    NetworkSearch --> PeerQuery[Query Peers]
-    PeerQuery --> CollectResults[Collect Results]
-    CollectResults --> RankNetwork[Rank Network Results]
+    %% Source Verification Flow
+    CheckSource --> SourceCheck[Verify Source]
+    SourceCheck --> LocationCheck[Check Location]
+    LocationCheck --> TimestampCheck[Verify Timestamp]
+    TimestampCheck --> CheckSource
 
-    RankLocal --> MergeResults[Merge Results]
-    RankNetwork --> MergeResults
+    %% Error Handling
+    FormatCheck -->|Invalid| RejectContent
+    ContentAnalysis -->|Invalid| RejectContent
+    IntegrityCheck -->|Invalid| RejectContent
+    SourceCheck -->|Invalid| RejectContent
+    LocationCheck -->|Invalid| RejectContent
+    TimestampCheck -->|Invalid| RejectContent
+    RejectContent --> AddDoc
 
-    MergeResults --> Filter[Apply Filters]
-    Filter --> Sort[Sort Results]
-    Sort --> Paginate[Paginate Results]
-    Paginate --> Display[Display Results]
-    Display --> End([End Search])
+    %% Content Storage Flow
+    StoreContent --> LocalStorage[Store Locally]
+    LocalStorage --> IPFSStorage[Store in IPFS]
+    IPFSStorage --> PublishContent
 
-    subgraph Filters
-        Filter --> Language[Language Filter]
-        Filter --> Date[Date Filter]
-        Filter --> Source[Source Filter]
-        Filter --> Type[Type Filter]
-    end
+    %% Content Publishing Flow
+    PublishContent --> NetworkBroadcast[Broadcast to Network]
+    NetworkBroadcast --> PeerDiscovery[Discover Peers]
+    PeerDiscovery --> ContentDistribution[Distribute Content]
+    ContentDistribution --> End
+
+    %% Download Flow
+    Download([Download Request]) --> SecurityCheck[Security Check]
+    SecurityCheck --> ContentVerify[Verify Content]
+    ContentVerify --> DownloadCheck{Content Safe?}
+    DownloadCheck -->|No| BlockDownload[Block Download]
+    DownloadCheck -->|Yes| AllowDownload[Allow Download]
+    AllowDownload --> SaveContent[Save Content]
+    SaveContent --> End
 ```
