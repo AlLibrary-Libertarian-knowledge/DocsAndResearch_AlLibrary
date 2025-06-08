@@ -1,12 +1,80 @@
-# AlLibrary
+# AlLibrary Documentation
 
-A decentralized, peer-to-peer library system built with Tauri v2 and Rust, designed to preserve and democratize access to knowledge while combating information manipulation. No account needed - just download and start sharing knowledge.
+Welcome to the AlLibrary documentation repository. This comprehensive collection covers all aspects of the project, from core concepts to technical implementation details.
 
 ## 🌟 Vision
 
-AlLibrary is a decentralized platform that leverages modern P2P technology to create a censorship-resistant repository of knowledge. In a world where information control has been used as a tool of power throughout history, AlLibrary stands as a shield for intellectual freedom and cultural preservation.
+AlLibrary is a decentralized, peer-to-peer library system built with Tauri v2 and Rust, designed to preserve and democratize access to knowledge while combating information manipulation. No account needed - just download and start sharing knowledge.
 
-## 🚀 Key Features
+## 📁 Documentation Structure
+
+### 📚 Core Documentation (`/core/`)
+
+Foundational documents that define the project's mission and vision:
+
+- **[Main Idea.md](./core/Main%20Idea.md)** - Core concept and mission statement
+- **[Summary.md](./core/Summary.md)** - Project summaries in multiple languages
+- **[SectionSummary.md](./core/SectionSummary.md)** - Overview of documentation sections
+
+### 🏛️ Project Management (`/project-management/`)
+
+Governance, legal, and sustainability frameworks:
+
+- **[governance.md](./project-management/governance.md)** - Decentralized governance framework
+- **[legal_framework.md](./project-management/legal_framework.md)** - Legal compliance and copyright handling
+- **[sustainability_growth.md](./project-management/sustainability_growth.md)** - Long-term sustainability strategy
+
+### ⚙️ Technical Documentation (`/technical/`)
+
+Comprehensive technical specifications and implementation details:
+
+- **[technical_specification.md](./technical/technical_specification.md)** - Core technical specifications
+- **[technical_operations.md](./technical/technical_operations.md)** - Operations and monitoring
+- **[techs&stacks.md](./technical/techs&stacks.md)** - Technology stack overview
+- **[P2P.md](./technical/P2P.md)** - Peer-to-peer networking implementation
+
+### 🔍 Analysis & Research (`/analysis/`)
+
+Research, analysis, and evaluation documents:
+
+- **[Comprehension.md](./analysis/Comprehension.md)** - Project comprehension analysis
+- **[Suggestions.md](./analysis/Suggestions.md)** - Improvement suggestions and recommendations
+- **[WhySolidJS.md](./analysis/WhySolidJS.md)** - SolidJS framework analysis
+
+### 🛡️ Security Documentation (`/security/`)
+
+Security architecture, threat modeling, and protection mechanisms.
+
+### 🚀 Deployment Documentation (`/deployment/`)
+
+Deployment strategies, distribution channels, and platform-specific guides.
+
+### 👨‍💻 Development Documentation (`/development/`)
+
+Development workflows, coding standards, and contributor guidelines.
+
+### 📡 API Documentation (`/api/`)
+
+API specifications, endpoints, and integration guides.
+
+### 🏗️ Architecture Documentation (`/architecture/`)
+
+System architecture, design patterns, and architectural decisions.
+
+### 🤔 Technology Justifications (`/reasons/`)
+
+Detailed explanations for each technology choice:
+
+- **[README.md](./reasons/README.md)** - Technology overview and decision matrix
+- **[tauri_v2.md](./reasons/tauri_v2.md)** - Desktop framework justification
+- **[rust.md](./reasons/rust.md)** - Backend language choice
+- **[solidjs.md](./reasons/solidjs.md)** - Frontend framework selection
+- **[sqlite.md](./reasons/sqlite.md)** - Database choice reasoning
+- **[libp2p.md](./reasons/libp2p.md)** - P2P networking framework
+- **[typescript.md](./reasons/typescript.md)** - Frontend language justification
+- **[vite.md](./reasons/vite.md)** - Build tool selection
+
+## 🎯 Key Features
 
 - **Decentralized Architecture**
 
@@ -14,160 +82,52 @@ AlLibrary is a decentralized platform that leverages modern P2P technology to cr
   - Rust-powered P2P networking for maximum performance and security
   - Content-addressed storage using IPFS/libp2p
   - Zero central points of failure
-  - No user accounts or authentication required
+
+- **Cultural Preservation**
+
+  - Dedicated support for indigenous knowledge systems
+  - Cultural context preservation and respectful access controls
+  - Multiple historical perspectives without censorship
+  - Community-controlled content governance
+
+- **Anti-Censorship**
+
+  - Decentralized content distribution
+  - TOR network integration for anonymous access
+  - Technical-only content filtering (malware/security)
+  - No central authority for content decisions
 
 - **Document Support**
-
   - Native PDF and EPUB handling
-  - Built-in document viewer
+  - Built-in document viewer with accessibility features
   - OCR capabilities for scanned documents
   - Multi-language support
 
-- **Historical Preservation**
-
-  - Dedicated space for primary sources
-  - Version control for document updates
-  - Metadata preservation
-  - Cultural context preservation
-
-- **Anti-Desinformation**
-
-  - Cryptographic verification of sources
-  - Community-driven fact-checking
-  - Source credibility scoring
-  - Historical context verification
-
-- **Open Access**
-  - Free and unrestricted access
-  - No login required
-  - Offline-first architecture
-  - Low-bandwidth optimization
-  - Multi-device synchronization
-
 ## 🛠 Technical Stack
 
-- **Frontend**
+- **Frontend**: Tauri v2 + SolidJS + TypeScript
+- **Backend**: Rust + tokio async runtime
+- **P2P Networking**: libp2p + IPFS
+- **Database**: SQLite for local storage
+- **Build Tools**: Vite + Cargo
+- **Security**: ring cryptography + TLS
 
-  - Tauri v2
-  - React/TypeScript
-  - Progressive Web App capabilities
+## 📖 Getting Started
 
-- **Backend**
+1. **Start with Core Concepts**: Read [Main Idea.md](./core/Main%20Idea.md) to understand the project vision
+2. **Review Technical Overview**: Check [technical_specification.md](./technical/technical_specification.md) for implementation details
+3. **Understand Technology Choices**: Explore [reasons/](./reasons/) for detailed technology justifications
+4. **Study Architecture**: Review architecture documentation for system design
+5. **Follow Development Guidelines**: Check development documentation for contribution guidelines
 
-  - Rust for core functionality
-  - libp2p for P2P networking
-  - IPFS for content addressing
-  - SQLite for local storage
-  - Anonymous peer identification
+## 🌍 Mission Statement
 
-- **Security**
-  - End-to-end encryption
-  - Zero-knowledge proofs
-  - Anonymous content sharing
-  - Secure content verification
-
-## 📦 Installation
-
-```bash
-# Prerequisites
-- Rust (latest stable)
-- Node.js 18+
-- Tauri CLI
-
-# Clone the repository
-git clone https://github.com/yourusername/allibrary.git
-
-# Install dependencies
-cd allibrary
-npm install
-
-# Run development server
-npm run tauri dev
-```
-
-## 🎯 Development Roadmap
-
-### Phase 1: Core Infrastructure (Q2 2024)
-
-- Basic Tauri v2 application setup
-- P2P networking implementation
-- Document storage and retrieval
-- Basic UI implementation
-- Anonymous peer discovery
-
-### Phase 2: Feature Enhancement (Q3 2024)
-
-- Document viewer implementation
-- Search functionality
-- Content verification
-- Local storage optimization
-
-### Phase 3: Advanced Features (Q4 2024)
-
-- Advanced search capabilities
-- Community features
-- Content verification system
-- Mobile support
-- Enhanced privacy features
-
-### Phase 4: Scale & Optimize (Q1 2025)
-
-- Performance optimization
-- Advanced security features
-- API stabilization
-- Documentation completion
-- Network resilience improvements
+AlLibrary exists to democratize knowledge access while respecting cultural sovereignty and combating information manipulation through decentralized, censorship-resistant technology. We believe in preserving multiple historical perspectives and empowering communities to control their own cultural narratives.
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
-
-## 📚 Documentation
-
-- [User Guide](docs/user-guide.md)
-- [Developer Guide](docs/developer-guide.md)
-- [API Reference](docs/api-reference.md)
-- [Architecture Overview](docs/architecture.md)
-
-## 🔒 Security
-
-Security is paramount. Please report any security issues to security@allibrary.org.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🌍 Global Impact
-
-AlLibrary aims to:
-
-- Preserve historical documents and primary sources
-- Combat misinformation and media manipulation
-- Ensure free and open access to information
-- Protect cultural diversity and local knowledge
-- Bridge the digital divide
-- Create a more informed society
-
-## 🤝 Partnerships
-
-We're actively seeking partnerships with:
-
-- University libraries
-- Cultural institutions
-- Digital rights organizations
-- Open-source communities
-
-## 📞 Contact
-
-- Website: [allibrary.org](https://allibrary.org)
-- Email: contact@allibrary.org
-- Twitter: [@AlLibrary](https://twitter.com/allibrary)
-- Discord: [Join our community](https://discord.gg/allibrary)
-
-## 🙏 Acknowledgments
-
-Thanks to all contributors and the open-source community for their support.
+This documentation is continuously evolving. Each folder contains specific guidelines for contributions in that area. Please review the relevant documentation sections before contributing.
 
 ---
 
-_AlLibrary - Preserving Knowledge, Empowering Humanity_
+_AlLibrary: Preserving knowledge, empowering communities, resisting censorship._
