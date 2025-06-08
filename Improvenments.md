@@ -65,8 +65,7 @@ Based on my comprehensive analysis of all three sections, here are the key gaps 
 ### **1. User Journey Design**
 
 - **Onboarding flow**: First-time user setup, tutorial, and initial content discovery
-- **User profiles and social features**: How users build reputation and connect
-- **Community interaction screens**: Reviews, ratings, discussions about content
+
 - **Gamification elements**: Incentives for sharing rare/valuable content
 
 ### **2. Edge Case & Error Design**

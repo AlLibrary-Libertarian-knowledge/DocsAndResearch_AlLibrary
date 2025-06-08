@@ -1,91 +1,129 @@
 # AlLibrary Detailed Development Milestones
 
-## Phase 1: Foundation (Weeks 1-4)
+_Single Developer, 3-Month MVP Timeline_
 
-### Milestone 1.1: Project Setup
+## Overview
+
+This milestone structure is designed for a **single developer** to complete AlLibrary's core development in **8 weeks** plus **4 weeks buffer** for delays and debugging (total 12 weeks) as a **zero-cost open source project**. Each of the 8 phases represents 1 week of development (32 hours) with specific deliverables and success criteria.
+
+## Development Philosophy
+
+- **MVP Focus**: Essential features only, iterate based on community feedback
+- **Community-Driven**: Open source from day 1, encourage early contributions
+- **P2P Growth**: Every user becomes a network node
+- **Cultural Sensitivity**: Basic cultural protection, expand with community input
+
+---
+
+# Phase 1: Foundation (Week 1)
+
+## Week 1: Project Foundation (32 hours)
+
+### Milestone 1.1: Core Infrastructure Setup
 
 #### Tasks:
 
-1. **Project Initialization**
+1. **Project Initialization** (8 hours)
 
-   - Create new Tauri project with SolidJS
-   - Set up TypeScript configuration
-   - Configure ESLint and Prettier
-   - Initialize Git repository
-   - Create initial project structure
+   - Create new Tauri v2 project with SolidJS template
+   - Set up TypeScript, ESLint, Prettier configuration
+   - Initialize Git repository with proper .gitignore
+   - Create basic project structure and folders
+   - Set up GitHub repository (public, open source)
 
-2. **Development Environment**
+2. **Development Environment** (4 hours)
 
-   - Set up Rust development environment
-   - Configure Node.js environment
-   - Install necessary development tools
-   - Set up IDE configurations
-   - Create development documentation
+   - Configure Rust development environment
+   - Set up Tauri CLI and development tools
+   - Configure VS Code with necessary extensions
+   - Set up debugging configuration
+   - Test hot reloading and build process
 
-3. **Build Pipeline**
-   - Configure Tauri build process
-   - Set up development scripts
-   - Create production build pipeline
-   - Configure hot reloading
-   - Set up debugging tools
+3. **SQLite Database Foundation** (12 hours)
+
+   - Design core database schema for documents
+   - Implement basic CRUD operations with SQLx
+   - Set up database migrations system
+   - Create database utilities and connection management
+   - Implement basic error handling
+
+4. **Basic Document Import** (8 hours)
+   - Implement file selection and import functionality
+   - Add support for PDF and EPUB file types
+   - Create basic metadata extraction
+   - Store documents in SQLite database
+   - Display imported documents in simple list
 
 #### Requirements:
 
 - Rust 1.70+
-- Node.js 16+
-- Tauri CLI
-- Git
+- Node.js 18+
+- Tauri CLI v2
 - SQLite 3
+- Git
 
 #### Success Criteria:
 
-- Project builds successfully
-- Development environment works
-- Hot reloading functions
-- Basic project structure in place
-- Version control working
+- [ ] Project builds and runs successfully
+- [ ] Can import PDF/EPUB files into application
+- [ ] Documents are stored in SQLite database
+- [ ] Basic UI shows list of imported documents
+- [ ] Hot reloading works for development
 
-### Milestone 1.2: Core Infrastructure
+#### Community Engagement (0 hours):
+
+- Focus on core development, minimal external engagement
+
+---
+
+# Phase 2: Local Functionality (Week 2)
+
+## Week 2: Document Management & Preview (32 hours)
+
+### Milestone 1.2: Document Handling System
 
 #### Tasks:
 
-1. **Database Setup**
+1. **Document Preview System** (16 hours)
 
-   - Create SQLite database schema
-   - Implement database migrations
-   - Set up connection pooling
-   - Create database utilities
-   - Implement error handling
+   - Integrate PDF.js for PDF preview functionality
+   - Add EPUB preview capabilities
+   - Create document viewer component with SolidJS
+   - Implement basic zoom and navigation controls
+   - Add document metadata display panel
 
-2. **Storage System**
+2. **Local Search Implementation** (12 hours)
 
-   - Implement file system operations
-   - Create storage utilities
-   - Set up file type detection
-   - Implement basic caching
-   - Create storage monitoring
+   - Set up SQLite FTS (Full-Text Search) tables
+   - Implement search functionality in Rust backend
+   - Create search input component in frontend
+   - Add search results display with highlighting
+   - Implement basic filters (file type, date added)
 
-3. **Error Handling**
-   - Implement error types
-   - Create error logging
-   - Set up error reporting
-   - Implement error recovery
-   - Create error documentation
+3. **Collections and Organization** (4 hours)
+   - Create basic collection creation functionality
+   - Implement document tagging system
+   - Add documents to collections interface
+   - Create collection view and management
+   - Basic document organization features
 
 #### Requirements:
 
-- SQLite database
-- File system access
-- Error handling patterns
-- Logging system
+- PDF.js library for document preview
+- SQLite FTS for search functionality
+- SolidJS components for UI
 
 #### Success Criteria:
 
-- Database operations work
-- File operations function
-- Error handling works
-- Logging system active
-- Basic infrastructure stable
+- [ ] Can preview PDF and EPUB documents
+- [ ] Search returns relevant results quickly (<1 second)
+- [ ] Can create collections and organize documents
+- [ ] Document metadata displays correctly
+- [ ] UI is responsive and functional
+
+#### Community Engagement (0 hours):
+
+- Still in core development phase
 
 ### Milestone 1.3: Basic UI Framework
 
@@ -129,7 +167,7 @@
 - Theming works
 - Basic UI complete
 
-## Phase 2: Local Functionality (Weeks 5-8)
+# Phase 3: P2P Foundation (Week 3)
 
 ### Milestone 2.1: Document Management
 
@@ -257,7 +295,7 @@
 - UI intuitive
 - System stable
 
-## Phase 3: P2P Foundation (Weeks 9-12)
+# Phase 4: Enhanced Features (Week 4)
 
 ### Milestone 3.1: P2P Network Setup
 
@@ -385,7 +423,7 @@
 - System stable
 - Analytics useful
 
-## Phase 4: Enhanced Features (Weeks 13-16)
+# Phase 5: Performance & Security (Week 5)
 
 ### Milestone 4.1: Advanced Document Features
 
@@ -513,7 +551,7 @@
 - Performance good
 - System stable
 
-## Phase 5: Performance & Security (Weeks 17-20)
+# Phase 6: Optimization (Week 6)
 
 ### Milestone 5.1: Performance Optimization
 
@@ -641,7 +679,7 @@
 - System stable
 - Performance good
 
-## Phase 6: User Experience (Weeks 21-24)
+# Phase 7: Testing & Documentation (Week 7)
 
 ### Milestone 6.1: UI Enhancement
 
@@ -769,7 +807,7 @@
 - System stable
 - Performance good
 
-## Phase 7: Testing & Polish (Weeks 25-28)
+# Phase 8: Release & Maintenance (Week 8)
 
 ### Milestone 7.1: Testing
 
@@ -897,130 +935,58 @@
 - System stable
 - Documentation complete
 
-## Phase 8: Release & Maintenance (Weeks 29+)
+---
 
-### Milestone 8.1: Release Preparation
+# Development Buffer: Weeks 9-12 (4 weeks)
 
-#### Tasks:
+## Buffer Period Overview
 
-1. **Build Preparation**
+The final 4 weeks (Weeks 9-12) are reserved as a **development buffer** for:
 
-   - Create release builds
-   - Implement build testing
-   - Add build documentation
-   - Create build monitoring
-   - Implement build automation
+- **Debugging & Bug Fixes**: Resolve issues discovered during development
+- **Feature Polish**: Improve user experience and interface refinements
+- **Performance Optimization**: Address any performance bottlenecks
+- **Documentation Completion**: Finalize user and developer documentation
+- **Testing & Validation**: Comprehensive testing across platforms
+- **Community Feedback Integration**: Incorporate early community input
+- **Release Preparation**: Final preparation for public release
 
-2. **Distribution Setup**
+## Buffer Week Allocation
 
-   - Create distribution system
-   - Implement update system
-   - Add distribution testing
-   - Create distribution docs
-   - Implement distribution monitoring
+### Week 9: Debugging & Issue Resolution
 
-3. **Release Management**
-   - Create release notes
-   - Implement release process
-   - Add release testing
-   - Create release docs
-   - Implement release monitoring
+- Fix critical bugs discovered during Phases 1-8
+- Address compatibility issues across platforms
+- Resolve performance problems
+- Test edge cases and error handling
 
-#### Requirements:
+### Week 10: Polish & User Experience
 
-- Build system
-- Distribution system
-- Release system
-- Testing system
+- UI/UX improvements and refinements
+- Accessibility enhancements
+- User feedback integration
+- Documentation and help improvements
 
-#### Success Criteria:
+### Week 11: Testing & Validation
 
-- Builds work
-- Distribution ready
-- Release complete
-- System stable
-- Documentation complete
+- Comprehensive cross-platform testing
+- Performance benchmarking and optimization
+- Security review and hardening
+- Community beta testing coordination
 
-### Milestone 8.2: Post-Release
+### Week 12: Release Preparation
 
-#### Tasks:
+- Final release builds for all platforms
+- Distribution setup and testing
+- Release documentation and materials
+- Community launch preparation
 
-1. **Performance Monitoring**
+## Success Criteria for Buffer Period
 
-   - Create monitoring system
-   - Implement performance tracking
-   - Add performance alerts
-   - Create performance docs
-   - Implement performance analysis
-
-2. **User Feedback**
-
-   - Create feedback system
-   - Implement feedback processing
-   - Add feedback analysis
-   - Create feedback docs
-   - Implement feedback monitoring
-
-3. **Issue Management**
-   - Create issue tracking
-   - Implement issue resolution
-   - Add issue analysis
-   - Create issue docs
-   - Implement issue monitoring
-
-#### Requirements:
-
-- Monitoring system
-- Feedback system
-- Issue system
-- Documentation system
-
-#### Success Criteria:
-
-- Monitoring works
-- Feedback processed
-- Issues resolved
-- System stable
-- Documentation complete
-
-### Milestone 8.3: Future Development
-
-#### Tasks:
-
-1. **Feature Planning**
-
-   - Create feature roadmap
-   - Implement feature planning
-   - Add feature analysis
-   - Create feature docs
-   - Implement feature monitoring
-
-2. **Improvement Planning**
-
-   - Create improvement plan
-   - Implement improvement process
-   - Add improvement analysis
-   - Create improvement docs
-   - Implement improvement monitoring
-
-3. **Development Planning**
-   - Create development plan
-   - Implement development process
-   - Add development analysis
-   - Create development docs
-   - Implement development monitoring
-
-#### Requirements:
-
-- Planning system
-- Analysis system
-- Documentation system
-- Monitoring system
-
-#### Success Criteria:
-
-- Planning complete
-- Analysis thorough
-- Documentation ready
-- System stable
-- Future clear
+- [ ] All critical bugs resolved
+- [ ] Performance meets target benchmarks
+- [ ] Documentation is complete and accurate
+- [ ] All platforms tested and working
+- [ ] Community feedback addressed
+- [ ] Release pipeline functional
+- [ ] Launch materials prepared
