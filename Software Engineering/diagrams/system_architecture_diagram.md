@@ -9,7 +9,6 @@ graph TB
     %% User Interface Layer
     subgraph "Frontend Layer"
         UI[SolidJS Web Interface]
-        Mobile[Progressive Web App]
         Desktop[Tauri Desktop App]
     end
 
@@ -66,7 +65,6 @@ graph TB
 
     %% Connections
     UI --> Router
-    Mobile --> Router
     Desktop --> Router
     Router --> StateManager
     StateManager --> ComponentLibrary
@@ -108,7 +106,7 @@ graph TB
     classDef network fill:#fff3e0
     classDef cultural fill:#fce4ec
 
-    class UI,Mobile,Desktop,Router,StateManager,ComponentLibrary,ThemeSystem frontend
+    class UI,Desktop,Router,StateManager,ComponentLibrary,ThemeSystem frontend
     class TauriCore,DatabaseManager,FileManager,CryptoEngine,NetworkEngine,IPFSClient backend
     class LocalDB,LocalFiles,IPFSNetwork,DHT storage
     class Peers,BootstrapNodes,ContentNodes network
@@ -151,7 +149,6 @@ graph TB
 ### **Frontend Components**
 
 - **SolidJS Interface**: Reactive web-based user interface
-- **Progressive Web App**: Mobile-optimized experience
 - **Tauri Desktop**: Native desktop application wrapper
 
 ### **Core Services**
