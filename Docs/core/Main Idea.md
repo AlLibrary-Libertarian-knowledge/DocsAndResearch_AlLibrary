@@ -2,7 +2,7 @@
 
 ## Vision
 
-AlLibrary is a decentralized platform designed to democratize access to knowledge and combat information manipulation through peer-to-peer technology. In a world where information control has been used as a tool of power throughout history, AlLibrary stands as a shield for intellectual freedom and cultural preservation.
+ALLibrary is a decentralized platform designed to democratize access to knowledge and combat information manipulation through peer-to-peer technology. In a world where information control has been used as a tool of power throughout history, AlLibrary stands as a shield for intellectual freedom and cultural preservation.
 
 ## Historical Context
 
