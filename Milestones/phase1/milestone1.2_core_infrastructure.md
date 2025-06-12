@@ -1,297 +1,400 @@
-# Milestone 1.2: Core Infrastructure
+# Milestone 1.2: Service Layer & Infrastructure Implementation
 
 ## Overview
 
-This milestone focuses on setting up the core infrastructure of the AlLibrary project, including database setup, storage system implementation, and error handling framework.
+**UPDATED**: This milestone now focuses on implementing the mandatory service layer architecture, cultural/security infrastructure, and following the architectural restructuring from Milestone 1.1.
+
+## Prerequisites
+
+- ✅ Milestone 1.1 completed (architectural restructuring)
+- ✅ Component hierarchy established
+- ✅ Directory structure aligned with coding rules
+- ✅ Cultural framework foundation in place
 
 ## Goals
 
-- Implement database system
-- Create storage system
-- Establish error handling
-- Set up logging system
-- Create core utilities
+1. **Service Layer Implementation** - Build comprehensive service architecture per coding rules
+2. **Cultural Validation System** - Implement active cultural protection and validation
+3. **Security Infrastructure** - Create input validation and content protection systems
+4. **Database Integration** - Connect services to SQLite with cultural metadata
+5. **Anti-Censorship Foundation** - Prepare P2P and TOR integration architecture
 
 ## Detailed Tasks
 
-### 1. Database Setup
+### 1. Service Layer Architecture (Priority 1)
 
-#### Task 1.1: Database Schema
+#### Task 1.1: API Service Layer
 
-- **Goal**: Create SQLite database schema
+- **Goal**: Implement core API services following SOLID principles
 - **Steps**:
-  1. Design database schema
-  2. Create table definitions
-  3. Set up relationships
-  4. Define constraints
-  5. Create indexes
+
+  1. **Document Service** (`src/services/api/documentService.ts`):
+     ```typescript
+     export const documentService = {
+       // CRUD operations with cultural validation
+       createDocument: async (doc: DocumentInput, culturalLevel: CulturalSensitivityLevel),
+       getDocument: async (id: string, userId: string), // includes access check
+       updateDocument: async (id: string, updates: DocumentUpdate, userId: string),
+       deleteDocument: async (id: string, userId: string),
+       // Cultural operations
+       validateCulturalAccess: async (docId: string, userId: string),
+       requestCulturalPermission: async (docId: string, userId: string)
+     };
+     ```
+  2. **Search Service** (`src/services/api/searchService.ts`):
+     ```typescript
+     export const searchService = {
+       // Local search with cultural filtering
+       searchLocal: async (query: string, userId: string, culturalContext?: string),
+       searchMetadata: async (filters: SearchFilters, userId: string),
+       // P2P search preparation (structure only)
+       searchNetwork: async (query: string, culturalLevel: CulturalSensitivityLevel),
+       buildSearchIndex: async (documents: Document[]),
+       updateSearchIndex: async (documentId: string)
+     };
+     ```
+  3. **Cultural Service** (`src/services/api/culturalService.ts`):
+     ```typescript
+     export const culturalService = {
+       // Cultural validation core
+       validateSensitivityLevel: async (content: any): CulturalSensitivityLevel,
+       requestCommunityValidation: async (content: any, communityId: string),
+       requestElderApproval: async (content: any, elderId: string),
+       // Educational workflows
+       provideEducationalContext: async (culturalContext: string),
+       trackEducationalProgress: async (userId: string, context: string),
+       // Cultural sovereignty
+       registerCulturalOwnership: async (content: any, communityId: string)
+     };
+     ```
+  4. **P2P Service** (`src/services/api/p2pService.ts`) - Foundation only:
+     ```typescript
+     export const p2pService = {
+       // Network operations (prepared for Phase 3)
+       initializeNode: async (),
+       discoverPeers: async (),
+       shareContent: async (contentHash: string, culturalLevel: CulturalSensitivityLevel),
+       // Content verification
+       verifyContentIntegrity: async (contentHash: string),
+       trackContentProvenance: async (contentHash: string)
+     };
+     ```
+
 - **Success Criteria**:
-  - Schema is designed
-  - Tables are defined
-  - Relationships established
-  - Constraints set
-  - Indexes created
+  - ✅ All API services implement cultural validation
+  - ✅ Services follow SOLID single responsibility principle
+  - ✅ Cultural access controls integrated into all operations
+  - ✅ P2P foundation prepared for future phases
 
-#### Task 1.2: Database Migrations
+#### Task 1.2: Storage Services
 
-- **Goal**: Implement database migrations
+- **Goal**: Implement storage layer with cultural metadata support
 - **Steps**:
-  1. Set up migration system
-  2. Create initial migration
-  3. Implement rollback
-  4. Add version tracking
-  5. Create migration utilities
+
+  1. **Database Service** (`src/services/storage/databaseService.ts`):
+     ```typescript
+     export const databaseService = {
+       // Enhanced with cultural metadata
+       documents: {
+         create: async (doc: Document & CulturalMetadata),
+         findWithCulturalFilter: async (userId: string, culturalLevel?: number),
+         updateCulturalLevel: async (docId: string, newLevel: CulturalSensitivityLevel)
+       },
+       cultural: {
+         storeApproval: async (docId: string, approvalData: CulturalApproval),
+         getAccessLevel: async (userId: string, docId: string),
+         logCulturalAccess: async (userId: string, docId: string, action: string)
+       }
+     };
+     ```
+  2. **File Service** (`src/services/storage/fileService.ts`):
+     ```typescript
+     export const fileService = {
+       // File operations with security scanning
+       uploadFile: async (file: File, culturalLevel: CulturalSensitivityLevel),
+       scanForMalware: async (filePath: string),
+       encryptSacredContent: async (filePath: string, culturalKey: string),
+       validateFileIntegrity: async (filePath: string, expectedHash: string)
+     };
+     ```
+  3. **Settings Service** (`src/services/storage/settingsService.ts`):
+     ```typescript
+     export const settingsService = {
+       // User preferences with cultural settings
+       getCulturalPreferences: async (userId: string),
+       updateEducationalProgress: async (userId: string, progress: EducationProgress),
+       setAccessibilityOptions: async (userId: string, options: A11yOptions)
+     };
+     ```
+
 - **Success Criteria**:
-  - Migration system works
-  - Initial migration complete
-  - Rollback functions
-  - Version tracking active
-  - Utilities available
+  - ✅ Database supports cultural metadata schemas
+  - ✅ File operations include security scanning
+  - ✅ Sacred content encryption implemented
+  - ✅ Cultural access logging functional
 
-#### Task 1.3: Connection Pooling
+#### Task 1.3: Network Services Foundation
 
-- **Goal**: Set up connection pooling
+- **Goal**: Prepare network services for P2P and anti-censorship features
 - **Steps**:
-  1. Configure connection pool
-  2. Set up pool limits
-  3. Implement connection management
-  4. Add connection monitoring
-  5. Create pool utilities
+
+  1. **libp2p Service** (`src/services/network/libp2pService.ts`) - Structure only:
+     ```typescript
+     export const libp2pService = {
+       // Prepared for Phase 3 implementation
+       initializeNode: async () => { /* Implementation in Phase 3 */ },
+       configurePeers: async () => { /* Implementation in Phase 3 */ },
+       // Cultural content routing
+       routeWithCulturalValidation: async (content: any, targetPeers: string[])
+     };
+     ```
+  2. **IPFS Service** (`src/services/network/ipfsService.ts`) - Structure only:
+     ```typescript
+     export const ipfsService = {
+       // Content addressing preparation
+       generateContentHash: async (content: any),
+       validateContentHash: async (content: any, hash: string),
+       // Cultural content tracking
+       addCulturalMetadata: async (hash: string, metadata: CulturalMetadata)
+     };
+     ```
+  3. **TOR Service** (`src/services/network/torService.ts`) - Structure only:
+     ```typescript
+     export const torService = {
+       // Anti-censorship preparation
+       initializeTorClient: async () => {
+         /* Implementation in Phase 5 */
+       },
+       routeThroughTor: async (request: any) => {
+         /* Implementation in Phase 5 */
+       },
+     };
+     ```
+
 - **Success Criteria**:
-  - Pool configured
-  - Limits set
-  - Management working
-  - Monitoring active
-  - Utilities available
+  - ✅ Network service structure prepared
+  - ✅ Cultural content routing planned
+  - ✅ Anti-censorship architecture ready
+  - ✅ Content verification foundation in place
 
-#### Task 1.4: Database Utilities
+### 2. Cultural Validation System (Priority 2)
 
-- **Goal**: Create database utilities
+#### Task 2.1: Cultural Validation Services
+
+- **Goal**: Implement active cultural protection and validation
 - **Steps**:
-  1. Create query builder
-  2. Implement transaction handling
-  3. Add query optimization
-  4. Create backup utilities
-  5. Implement recovery tools
+
+  1. **Document Validator** (`src/services/validation/documentValidator.ts`):
+     ```typescript
+     export const documentValidator = {
+       // Cultural content analysis
+       analyzeCulturalSensitivity: async (content: string): Promise<CulturalAnalysis>,
+       detectSacredSymbols: async (content: any): Promise<SacredSymbol[]>,
+       validateCulturalContext: async (content: any, declaredLevel: CulturalSensitivityLevel),
+       // Format validation
+       validatePDFContent: async (filePath: string),
+       validateEPUBContent: async (filePath: string)
+     };
+     ```
+  2. **Cultural Validator** (`src/services/validation/culturalValidator.ts`):
+     ```typescript
+     export const culturalValidator = {
+       // Access control implementation
+       validateUserAccess: async (userId: string, culturalLevel: CulturalSensitivityLevel),
+       requireEducationalCompletion: async (userId: string, culturalContext: string),
+       requestCommunityPermission: async (userId: string, communityId: string),
+       validateElderApproval: async (contentId: string, elderId: string),
+       // Protection mechanisms
+       enforceCulturalSovereignty: async (contentId: string, operation: string)
+     };
+     ```
+  3. **Cultural Education Service** (`src/services/validation/culturalEducation.ts`):
+     ```typescript
+     export const culturalEducationService = {
+       // Educational workflow implementation
+       getRequiredEducation: async (culturalLevel: CulturalSensitivityLevel),
+       trackEducationProgress: async (userId: string, moduleId: string),
+       validateEducationCompletion: async (userId: string, culturalContext: string),
+       provideCulturalContext: async (contentId: string): Promise<CulturalContext>
+     };
+     ```
+
 - **Success Criteria**:
-  - Query builder works
-  - Transactions function
-  - Optimization active
-  - Backup tools ready
-  - Recovery available
+  - ✅ Cultural sensitivity detection functional
+  - ✅ Educational workflows implemented
+  - ✅ Community permission systems active
+  - ✅ Sacred content protection mechanisms working
 
-#### Task 1.5: Error Handling
+### 3. Security Infrastructure (Priority 3)
 
-- **Goal**: Implement error handling
+#### Task 3.1: Security Validation Pipeline
+
+- **Goal**: Implement comprehensive security validation
 - **Steps**:
-  1. Create error types
-  2. Implement error handling
-  3. Add error logging
-  4. Create error recovery
-  5. Implement error reporting
+
+  1. **Security Validator** (`src/services/validation/securityValidator.ts`):
+     ```typescript
+     export const securityValidator = {
+       // Input validation pipeline
+       validateInput: async (input: any, context: ValidationContext): Promise<ValidationResult>,
+       sanitizeContent: async (content: string): Promise<string>,
+       scanForMalware: async (filePath: string): Promise<ScanResult>,
+       validateFileSignature: async (filePath: string): Promise<boolean>,
+       // Cryptographic validation
+       verifyContentIntegrity: async (content: any, hash: string): Promise<boolean>,
+       generateSecureHash: async (content: any): Promise<string>
+     };
+     ```
+  2. **Content Scanner** (`src/services/validation/contentScanner.ts`):
+     ```typescript
+     export const contentScanner = {
+       // Malware detection
+       scanPDFContent: async (filePath: string): Promise<ScanResult>,
+       scanEPUBContent: async (filePath: string): Promise<ScanResult>,
+       validateFileType: async (file: File): Promise<boolean>,
+       // Content analysis
+       detectSuspiciousPatterns: async (content: string): Promise<SecurityThreat[]>,
+       validateContentSafety: async (content: any): Promise<SafetyResult>
+     };
+     ```
+
 - **Success Criteria**:
-  - Error types defined
-  - Handling works
-  - Logging active
-  - Recovery functions
-  - Reporting available
+  - ✅ 100% input validation coverage implemented
+  - ✅ Malware scanning operational
+  - ✅ Content sanitization functional
+  - ✅ Cryptographic validation working
 
-### 2. Storage System
+### 4. Database Integration (Priority 4)
 
-#### Task 2.1: File System Operations
+#### Task 4.1: Enhanced Database Schema
 
-- **Goal**: Implement file system operations
+- **Goal**: Implement database with cultural metadata support
 - **Steps**:
-  1. Create file operations
-  2. Implement directory handling
-  3. Add file monitoring
-  4. Create file utilities
-  5. Implement file validation
+
+  1. **Cultural Metadata Tables**:
+
+     ```sql
+     CREATE TABLE cultural_metadata (
+       id INTEGER PRIMARY KEY,
+       document_id INTEGER REFERENCES documents(id),
+       sensitivity_level INTEGER NOT NULL,
+       cultural_origin TEXT,
+       community_id TEXT,
+       requires_education BOOLEAN DEFAULT FALSE,
+       sacred_content BOOLEAN DEFAULT FALSE,
+       approval_required BOOLEAN DEFAULT FALSE,
+       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+     );
+
+     CREATE TABLE cultural_approvals (
+       id INTEGER PRIMARY KEY,
+       document_id INTEGER REFERENCES documents(id),
+       approver_id TEXT NOT NULL,
+       approval_type TEXT NOT NULL, -- 'community', 'elder', 'guardian'
+       approved_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+       approval_metadata JSON
+     );
+
+     CREATE TABLE cultural_access_log (
+       id INTEGER PRIMARY KEY,
+       user_id TEXT NOT NULL,
+       document_id INTEGER REFERENCES documents(id),
+       access_type TEXT NOT NULL,
+       cultural_level INTEGER,
+       approved BOOLEAN,
+       accessed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+     );
+     ```
+
+  2. **Database Migration System** with cultural support
+  3. **Query Builders** with cultural filtering
+  4. **Cultural Access Queries** implementation
+
 - **Success Criteria**:
-  - Operations work
-  - Directory handling functions
-  - Monitoring active
-  - Utilities available
-  - Validation works
-
-#### Task 2.2: Storage Utilities
-
-- **Goal**: Create storage utilities
-- **Steps**:
-  1. Create storage interface
-  2. Implement storage methods
-  3. Add storage validation
-  4. Create storage monitoring
-  5. Implement storage utilities
-- **Success Criteria**:
-  - Interface defined
-  - Methods work
-  - Validation active
-  - Monitoring functions
-  - Utilities available
-
-#### Task 2.3: File Type Detection
-
-- **Goal**: Set up file type detection
-- **Steps**:
-  1. Implement type detection
-  2. Add MIME handling
-  3. Create type validation
-  4. Add type utilities
-  5. Implement type monitoring
-- **Success Criteria**:
-  - Detection works
-  - MIME handling functions
-  - Validation active
-  - Utilities available
-  - Monitoring works
-
-#### Task 2.4: Basic Caching
-
-- **Goal**: Implement basic caching
-- **Steps**:
-  1. Create cache system
-  2. Implement cache methods
-  3. Add cache validation
-  4. Create cache monitoring
-  5. Implement cache utilities
-- **Success Criteria**:
-  - Cache system works
-  - Methods function
-  - Validation active
-  - Monitoring works
-  - Utilities available
-
-#### Task 2.5: Storage Monitoring
-
-- **Goal**: Create storage monitoring
-- **Steps**:
-  1. Create monitoring system
-  2. Implement monitoring methods
-  3. Add monitoring alerts
-  4. Create monitoring reports
-  5. Implement monitoring utilities
-- **Success Criteria**:
-  - System works
-  - Methods function
-  - Alerts active
-  - Reports available
-  - Utilities ready
-
-### 3. Error Handling
-
-#### Task 3.1: Error Types
-
-- **Goal**: Implement error types
-- **Steps**:
-  1. Create error hierarchy
-  2. Implement error classes
-  3. Add error codes
-  4. Create error messages
-  5. Implement error utilities
-- **Success Criteria**:
-  - Hierarchy defined
-  - Classes implemented
-  - Codes added
-  - Messages created
-  - Utilities available
-
-#### Task 3.2: Error Logging
-
-- **Goal**: Create error logging
-- **Steps**:
-  1. Set up logging system
-  2. Implement log levels
-  3. Add log formatting
-  4. Create log storage
-  5. Implement log utilities
-- **Success Criteria**:
-  - System works
-  - Levels defined
-  - Formatting active
-  - Storage ready
-  - Utilities available
-
-#### Task 3.3: Error Reporting
-
-- **Goal**: Set up error reporting
-- **Steps**:
-  1. Create reporting system
-  2. Implement report formats
-  3. Add report delivery
-  4. Create report storage
-  5. Implement report utilities
-- **Success Criteria**:
-  - System works
-  - Formats defined
-  - Delivery functions
-  - Storage ready
-  - Utilities available
-
-#### Task 3.4: Error Recovery
-
-- **Goal**: Implement error recovery
-- **Steps**:
-  1. Create recovery system
-  2. Implement recovery methods
-  3. Add recovery validation
-  4. Create recovery monitoring
-  5. Implement recovery utilities
-- **Success Criteria**:
-  - System works
-  - Methods function
-  - Validation active
-  - Monitoring works
-  - Utilities available
-
-#### Task 3.5: Error Documentation
-
-- **Goal**: Create error documentation
-- **Steps**:
-  1. Create error guide
-  2. Implement error examples
-  3. Add troubleshooting
-  4. Create error references
-  5. Implement documentation utilities
-- **Success Criteria**:
-  - Guide complete
-  - Examples added
-  - Troubleshooting ready
-  - References created
-  - Utilities available
+  - ✅ Cultural metadata fully integrated
+  - ✅ Cultural access logging functional
+  - ✅ Approval workflow database support
+  - ✅ Migration system supports cultural schema
 
 ## Dependencies
 
-- SQLite database
-- File system access
-- Error handling patterns
-- Logging system
-- Monitoring tools
+- ✅ Milestone 1.1 completed (architectural restructuring)
+- SQLite with cultural metadata support
+- TypeScript strict mode enforcement
+- Cultural community consultation (for validation rules)
+- Security scanning libraries integration
 
 ## Success Criteria
 
-- Database operations work
-- File operations function
-- Error handling works
-- Logging system active
-- Basic infrastructure stable
+### Service Layer
+
+- [ ] All services implement cultural validation
+- [ ] Service layer follows SOLID principles exactly
+- [ ] Cultural access controls integrated throughout
+- [ ] P2P foundation prepared for Phase 3
+
+### Cultural Infrastructure
+
+- [ ] 5-level cultural sensitivity system active
+- [ ] Educational workflows functional
+- [ ] Community permission systems working
+- [ ] Sacred content protection implemented
+
+### Security Infrastructure
+
+- [ ] 100% input validation coverage
+- [ ] Malware scanning operational
+- [ ] Content sanitization working
+- [ ] Cryptographic validation functional
+
+### Database Integration
+
+- [ ] Cultural metadata fully supported
+- [ ] Cultural access logging active
+- [ ] Approval workflows database-backed
+- [ ] Migration system supports cultural features
 
 ## Timeline
 
-- Task 1: 4 days
-- Task 2: 3 days
-- Task 3: 3 days
+- **Task 1 (Service Layer)**: 3 days
+- **Task 2 (Cultural System)**: 2 days
+- **Task 3 (Security)**: 2 days
+- **Task 4 (Database)**: 2 days
+
+**Total**: 1 week implementation
 
 ## Risk Management
 
-- Database performance
-- Storage reliability
-- Error handling coverage
-- Logging efficiency
-- System stability
+### High-Risk Areas
 
-## Next Steps
+- **Cultural Validation Complexity**: Requires community input
+- **Security Implementation**: Must be comprehensive from start
+- **Database Schema Changes**: Requires careful migration
+- **Service Integration**: Must maintain loose coupling
 
-- Begin Basic UI Framework
-- Prepare for Document Management
-- Start Local Search implementation
+### Mitigation Strategies
+
+- **Cultural Advisory Board**: Early engagement for validation rules
+- **Security Audit**: External review of validation pipeline
+- **Database Testing**: Comprehensive migration testing
+- **Service Testing**: Unit tests for all service interactions
+
+## Updated Next Steps
+
+1. **Week 1**: Complete service layer implementation
+2. **Week 2**: Integrate cultural validation throughout application
+3. **Week 3**: Implement security infrastructure
+4. **Week 4**: Complete database integration and testing
+
+---
+
+## 🛡️ CULTURAL & SECURITY NOTICE
+
+**This milestone establishes the foundation for:**
+
+- **Cultural Respect**: Every operation validates cultural sensitivity
+- **Information Integrity**: All content verified and protected
+- **Community Sovereignty**: Cultural communities control their content
+- **Anti-Censorship**: Foundation prepared for decentralized operations
+
+**All future development builds upon this secure, culturally-aware infrastructure.**

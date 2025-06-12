@@ -1,297 +1,354 @@
-# Milestone 1.1: Project Setup
+# Milestone 1.1: Project Setup & Architectural Restructuring
 
 ## Overview
 
-This milestone focuses on setting up the initial project structure, development environment, and build pipeline for the AlLibrary project using Tauri and SolidJS.
+**UPDATED**: This milestone has been revised to address critical architectural misalignments discovered during project analysis. Phase 1 now focuses on establishing proper SOLID architecture and mandatory component hierarchy before proceeding with development.
+
+## Current Status Analysis
+
+**Project State**: Phase 1 reported as "100% Complete" but architectural analysis reveals critical structural violations that must be addressed immediately.
+
+### Critical Issues Identified
+
+- **Component Hierarchy Violation**: Current structure violates mandatory foundation → domain → composite → pages pattern
+- **Missing Core Directories**: `src/types/`, `src/hooks/` missing; `src/services/`, `src/stores/` empty
+- **Cultural Framework Missing**: No cultural validation, sensitivity levels, or protection mechanisms
+- **Security Framework Missing**: No input validation pipelines or malware scanning integration
 
 ## Goals
 
-- Initialize project structure
-- Set up development environment
-- Configure build pipeline
-- Establish version control
-- Create initial documentation
+1. **Architectural Restructuring** - Fix SOLID violations and establish proper component hierarchy
+2. **Cultural Framework Integration** - Implement mandatory 5-level cultural sensitivity system
+3. **Security Foundation** - Establish comprehensive input validation and content protection
+4. **Development Standards** - Align with coding rules and anti-censorship requirements
 
 ## Detailed Tasks
 
-### 1. Project Initialization
+### 1. CRITICAL: Architectural Restructuring (Priority 1)
 
-#### Task 1.1: Tauri Project Setup
+#### Task 1.1: Component Hierarchy Restructuring
 
-- **Goal**: Create new Tauri project with SolidJS
+- **Goal**: Fix component hierarchy to follow SOLID principles
+- **Current Problem**: Components scattered in `network/`, `layout/`, `common/`, etc.
 - **Steps**:
-  1. Install Tauri CLI
-  2. Create new Tauri project
-  3. Configure SolidJS integration
-  4. Set up project structure
-  5. Initialize package management
+
+  1. **Audit existing components** and categorize by responsibility
+  2. **Create proper hierarchy**:
+     ```
+     src/components/
+     ├── foundation/     # Button, Input, Card, Modal, LoadingSpinner
+     ├── domain/         # DocumentCard, SearchBar, CulturalIndicator
+     ├── composite/      # DocumentGrid, NetworkGraph, SearchInterface
+     └── pages/          # Consolidate from src/pages/
+     ```
+  3. **Migrate components** preserving functionality
+  4. **Update imports** throughout application
+  5. **Test component functionality** after migration
+
 - **Success Criteria**:
-  - Project created successfully
-  - Tauri CLI installed
-  - SolidJS integrated
-  - Structure follows best practices
-  - Dependencies managed properly
+  - ✅ All components follow foundation → domain → composite → pages hierarchy
+  - ✅ No duplicate component structures
+  - ✅ All imports use absolute paths (`@/components/foundation/...`)
+  - ✅ Component reusability >80% achieved
 
-#### Task 1.2: TypeScript Configuration
+#### Task 1.2: Missing Directory Structure Creation
 
-- **Goal**: Set up TypeScript configuration
+- **Goal**: Create mandatory missing directories per coding rules
 - **Steps**:
-  1. Install TypeScript
-  2. Configure tsconfig.json
-  3. Set up type definitions
-  4. Configure path aliases
-  5. Set up module resolution
+
+  1. **Create type definitions structure**:
+     ```
+     src/types/
+     ├── Cultural.ts           # 5-level sensitivity system
+     ├── Document.ts           # Document models
+     ├── Network.ts            # P2P types
+     ├── Security.ts           # Validation types
+     └── index.ts              # Unified exports
+     ```
+  2. **Create hooks organization**:
+     ```
+     src/hooks/
+     ├── api/                  # useDocuments, useSearch, useP2P
+     ├── ui/                   # useModal, useToast, useTheme
+     ├── data/                 # useLocalStorage, useDatabase
+     └── cultural/             # useCulturalAccess, useCulturalValidation
+     ```
+  3. **Create service layer**:
+     ```
+     src/services/
+     ├── api/                  # documentService, searchService, culturalService
+     ├── storage/              # databaseService, fileService, settingsService
+     ├── network/              # libp2pService, ipfsService, torService
+     └── validation/           # documentValidator, culturalValidator, securityValidator
+     ```
+  4. **Create stores structure**:
+     ```
+     src/stores/
+     ├── documentStore.ts      # Document state management
+     ├── culturalStore.ts      # Cultural context state
+     ├── networkStore.ts       # P2P network state
+     └── securityStore.ts      # Security validation state
+     ```
+
 - **Success Criteria**:
-  - TypeScript installed
-  - Configuration complete
-  - Types working
-  - Paths configured
-  - Modules resolving
+  - ✅ All mandatory directories exist
+  - ✅ Directory structure matches coding rules exactly
+  - ✅ Each directory has proper index.ts exports
+  - ✅ TypeScript paths configured for all new directories
 
-#### Task 1.3: Code Quality Tools
+#### Task 1.3: Page Structure Consolidation
 
-- **Goal**: Configure ESLint and Prettier
+- **Goal**: Resolve dual page structure violation
+- **Current Problem**: Pages exist in both `src/pages/` and should be in `src/components/pages/`
 - **Steps**:
-  1. Install ESLint and Prettier
-  2. Configure ESLint rules
-  3. Set up Prettier formatting
-  4. Create lint scripts
-  5. Configure IDE integration
+
+  1. **Move all pages** from `src/pages/` to `src/components/pages/`
+  2. **Update routing configuration** to use new paths
+  3. **Follow page component structure**:
+     ```
+     src/components/pages/HomePage/
+     ├── HomePage.tsx
+     ├── HomePage.module.css
+     ├── HomePage.test.tsx
+     ├── hooks/
+     │   └── useHomePage.ts
+     └── index.ts
+     ```
+  4. **Remove old `src/pages/` directory**
+  5. **Update all page imports** throughout application
+
 - **Success Criteria**:
-  - Tools installed
-  - Rules configured
-  - Formatting working
-  - Scripts functional
-  - IDE integration complete
+  - ✅ Single page structure in `src/components/pages/`
+  - ✅ All pages follow component file structure pattern
+  - ✅ Routing works with new structure
+  - ✅ No duplicate page definitions
 
-#### Task 1.4: Version Control
+### 2. Cultural Framework Implementation (Priority 2)
 
-- **Goal**: Initialize Git repository
+#### Task 2.1: Cultural Sensitivity System
+
+- **Goal**: Implement mandatory 5-level cultural sensitivity classification
 - **Steps**:
-  1. Initialize Git repository
-  2. Create .gitignore
-  3. Set up branch strategy
-  4. Configure Git hooks
-  5. Create initial commit
+
+  1. **Create cultural types**:
+     ```typescript
+     // src/types/Cultural.ts
+     export enum CulturalSensitivityLevel {
+       PUBLIC = 1, // Open access
+       EDUCATIONAL = 2, // Educational context required
+       COMMUNITY = 3, // Community permission needed
+       GUARDIAN = 4, // Guardian/elder approval required
+       SACRED = 5, // Highest protection level
+     }
+     ```
+  2. **Implement cultural validation service**:
+     ```typescript
+     // src/services/validation/culturalValidator.ts
+     export const culturalValidator = {
+       validateAccess: async (userId: string, contentLevel: CulturalSensitivityLevel),
+       requireEducation: async (userId: string, culturalContext: string),
+       requestPermission: async (userId: string, communityId: string)
+     };
+     ```
+  3. **Create cultural access hooks**:
+     ```typescript
+     // src/hooks/cultural/useCulturalAccess.ts
+     export const useCulturalAccess = (level: CulturalSensitivityLevel) => {
+       // Implement cultural access control logic
+     };
+     ```
+  4. **Add cultural indicators to UI components**
+  5. **Create educational workflow components**
+
 - **Success Criteria**:
-  - Repository initialized
-  - Gitignore configured
-  - Branch strategy defined
-  - Hooks working
-  - Initial commit made
+  - ✅ 5-level cultural sensitivity system implemented
+  - ✅ Cultural validation integrated into all content access
+  - ✅ Educational workflows function properly
+  - ✅ Cultural indicators visible in UI
 
-#### Task 1.5: Project Structure
+#### Task 2.2: Cultural Protection Framework
 
-- **Goal**: Create initial project structure
+- **Goal**: Implement cultural content protection mechanisms
 - **Steps**:
-  1. Create directory structure
-  2. Set up source directories
-  3. Create asset directories
-  4. Set up test directories
-  5. Create documentation structure
+
+  1. **Create cultural content encryption** for sacred materials
+  2. **Implement community validation workflows**
+  3. **Add elder/guardian approval systems**
+  4. **Create cultural context preservation** mechanisms
+  5. **Implement cultural sovereignty controls**
+
 - **Success Criteria**:
-  - Directories created
-  - Structure organized
-  - Assets separated
-  - Tests configured
-  - Documentation ready
+  - ✅ Sacred content properly encrypted and protected
+  - ✅ Community validation workflows functional
+  - ✅ Cultural sovereignty respected in all operations
+  - ✅ Cultural context preserved during sharing
 
-### 2. Development Environment
+### 3. Security Framework Implementation (Priority 3)
 
-#### Task 2.1: Rust Environment
+#### Task 3.1: Input Validation Pipeline
 
-- **Goal**: Set up Rust development environment
+- **Goal**: Implement mandatory 100% input validation
 - **Steps**:
-  1. Install Rust toolchain
-  2. Configure Cargo
-  3. Set up Rust dependencies
-  4. Configure Rust IDE
-  5. Create Rust documentation
+
+  1. **Create validation pipeline**:
+     ```typescript
+     // src/services/validation/securityValidator.ts
+     export const validateInput = async (
+       input: any,
+       context: ValidationContext
+     ) => {
+       // 1. Type validation
+       // 2. Security validation
+       // 3. Cultural validation (if applicable)
+       // 4. Malware scanning
+       return { valid: boolean, sanitizedInput: any };
+     };
+     ```
+  2. **Implement document validator** for PDF/EPUB content
+  3. **Add malware scanning integration**
+  4. **Create content sanitization** mechanisms
+  5. **Implement security monitoring**
+
 - **Success Criteria**:
-  - Rust installed
-  - Cargo configured
-  - Dependencies set
-  - IDE working
-  - Documentation complete
+  - ✅ 100% of user inputs validated through pipeline
+  - ✅ Document content scanned for malware
+  - ✅ Content properly sanitized before storage
+  - ✅ Security violations logged and monitored
 
-#### Task 2.2: Node.js Environment
+#### Task 3.2: Anti-Censorship Architecture
 
-- **Goal**: Configure Node.js environment
+- **Goal**: Implement resistance to information control
 - **Steps**:
-  1. Install Node.js
-  2. Configure npm/yarn
-  3. Set up Node dependencies
-  4. Configure Node IDE
-  5. Create Node documentation
+
+  1. **Prepare TOR integration framework** (structure only)
+  2. **Implement offline capability foundation**
+  3. **Create P2P architecture preparation**
+  4. **Add content verification mechanisms**
+  5. **Implement information integrity tracking**
+
 - **Success Criteria**:
-  - Node.js installed
-  - Package manager configured
-  - Dependencies set
-  - IDE working
-  - Documentation complete
+  - ✅ Architecture supports TOR integration
+  - ✅ Offline capability framework in place
+  - ✅ P2P foundation prepared
+  - ✅ Content integrity mechanisms active
 
-#### Task 2.3: Development Tools
+### 4. Development Standards Implementation (Priority 4)
 
-- **Goal**: Install necessary development tools
+#### Task 4.1: Coding Rules Compliance
+
+- **Goal**: Ensure all development follows established coding rules
 - **Steps**:
-  1. Install build tools
-  2. Set up debugging tools
-  3. Configure testing tools
-  4. Set up documentation tools
-  5. Install development utilities
+
+  1. **Implement mandatory file naming conventions**
+  2. **Create component templates** following patterns
+  3. **Set up TypeScript strict mode** enforcement
+  4. **Implement testing requirements** (>80% coverage)
+  5. **Create documentation standards** enforcement
+
 - **Success Criteria**:
-  - Tools installed
-  - Debugging configured
-  - Testing ready
-  - Documentation tools set
-  - Utilities available
+  - ✅ All files follow naming conventions
+  - ✅ Components use established patterns
+  - ✅ TypeScript strict mode enforced
+  - ✅ Testing coverage >80%
 
-#### Task 2.4: IDE Configuration
+#### Task 4.2: Quality Gates Implementation
 
-- **Goal**: Set up IDE configurations
+- **Goal**: Implement mandatory quality gates from coding rules
 - **Steps**:
-  1. Configure editor settings
-  2. Set up extensions
-  3. Configure debugging
-  4. Set up formatting
-  5. Configure shortcuts
+
+  1. **Update pre-commit checklist** with 10 mandatory checks
+  2. **Implement cultural code review** requirements
+  3. **Add accessibility validation** (WCAG 2.1 AA)
+  4. **Create performance monitoring** framework
+  5. **Implement progress tracking** updates
+
 - **Success Criteria**:
-  - Settings configured
-  - Extensions installed
-  - Debugging working
-  - Formatting active
-  - Shortcuts set
-
-#### Task 2.5: Development Documentation
-
-- **Goal**: Create development documentation
-- **Steps**:
-  1. Create setup guide
-  2. Document environment
-  3. Create contribution guide
-  4. Document workflows
-  5. Create troubleshooting guide
-- **Success Criteria**:
-  - Setup guide complete
-  - Environment documented
-  - Contribution guide ready
-  - Workflows defined
-  - Troubleshooting guide available
-
-### 3. Build Pipeline
-
-#### Task 3.1: Tauri Build
-
-- **Goal**: Configure Tauri build process
-- **Steps**:
-  1. Configure build settings
-  2. Set up build scripts
-  3. Configure build targets
-  4. Set up build artifacts
-  5. Create build documentation
-- **Success Criteria**:
-  - Settings configured
-  - Scripts working
-  - Targets set
-  - Artifacts defined
-  - Documentation complete
-
-#### Task 3.2: Development Scripts
-
-- **Goal**: Set up development scripts
-- **Steps**:
-  1. Create dev scripts
-  2. Set up watch mode
-  3. Configure hot reload
-  4. Create utility scripts
-  5. Document scripts
-- **Success Criteria**:
-  - Scripts created
-  - Watch mode working
-  - Hot reload active
-  - Utilities available
-  - Documentation complete
-
-#### Task 3.3: Production Build
-
-- **Goal**: Create production build pipeline
-- **Steps**:
-  1. Configure production build
-  2. Set up optimization
-  3. Configure bundling
-  4. Set up minification
-  5. Create build documentation
-- **Success Criteria**:
-  - Build configured
-  - Optimization set
-  - Bundling working
-  - Minification active
-  - Documentation complete
-
-#### Task 3.4: Hot Reloading
-
-- **Goal**: Configure hot reloading
-- **Steps**:
-  1. Set up hot reload
-  2. Configure reload triggers
-  3. Set up state preservation
-  4. Configure error handling
-  5. Create reload documentation
-- **Success Criteria**:
-  - Hot reload working
-  - Triggers configured
-  - State preserved
-  - Errors handled
-  - Documentation complete
-
-#### Task 3.5: Debugging Tools
-
-- **Goal**: Set up debugging tools
-- **Steps**:
-  1. Configure debugger
-  2. Set up logging
-  3. Configure error tracking
-  4. Set up performance monitoring
-  5. Create debugging documentation
-- **Success Criteria**:
-  - Debugger configured
-  - Logging working
-  - Error tracking active
-  - Monitoring set up
-  - Documentation complete
+  - ✅ Pre-commit checklist enforced
+  - ✅ Cultural review process active
+  - ✅ Accessibility compliance verified
+  - ✅ Performance targets monitored
 
 ## Dependencies
 
-- Rust 1.70+
-- Node.js 16+
-- Tauri CLI
-- Git
-- SQLite 3
+- **CRITICAL**: All future development depends on this restructuring
+- Rust 1.70+ (existing)
+- Node.js 18+ (existing)
+- TypeScript strict mode (needs enforcement)
+- Cultural advisor consultation (for framework validation)
 
 ## Success Criteria
 
-- Project builds successfully
-- Development environment works
-- Hot reloading functions
-- Basic project structure in place
-- Version control working
+### Architectural Compliance
+
+- [ ] Component hierarchy follows foundation → domain → composite → pages exactly
+- [ ] All mandatory directories exist and are properly structured
+- [ ] No architectural violations remain
+- [ ] SOLID principles enforced throughout codebase
+
+### Cultural Integration
+
+- [ ] 5-level cultural sensitivity system implemented
+- [ ] Cultural validation pipelines functional
+- [ ] Sacred content protection mechanisms active
+- [ ] Community sovereignty respected
+
+### Security Implementation
+
+- [ ] 100% input validation coverage achieved
+- [ ] Malware scanning integrated
+- [ ] Content sanitization functional
+- [ ] Anti-censorship architecture prepared
+
+### Code Quality
+
+- [ ] > 95% TypeScript strict mode coverage
+- [ ] > 80% component reusability achieved
+- [ ] Coding rules compliance verified
+- [ ] Quality gates implemented and active
 
 ## Timeline
 
-- Task 1: 4 days
-- Task 2: 3 days
-- Task 3: 3 days
+**URGENT**: This restructuring must be completed before proceeding with any new features.
+
+- **Task 1 (Architectural)**: 2-3 days (CRITICAL PATH)
+- **Task 2 (Cultural)**: 2 days
+- **Task 3 (Security)**: 2 days
+- **Task 4 (Standards)**: 1 day
+
+**Total**: 1 week intensive restructuring
 
 ## Risk Management
 
-- Environment compatibility
-- Build process reliability
-- Development workflow efficiency
-- Tool integration issues
-- Documentation completeness
+### High-Risk Issues
 
-## Next Steps
+- **Breaking Changes**: Restructuring will temporarily break application
+- **Development Delay**: Must pause feature development during restructuring
+- **Cultural Validation**: Requires community input for cultural framework
+- **Technical Debt**: Current violations accumulating technical debt
 
-- Begin Core Infrastructure implementation
-- Prepare for Basic UI Framework
-- Start Database Setup
+### Mitigation Strategies
+
+- **Incremental Migration**: Move components in logical groups
+- **Comprehensive Testing**: Test each migration step
+- **Documentation**: Document all changes for rollback if needed
+- **Community Engagement**: Involve cultural advisors early
+
+## Updated Next Steps
+
+1. **IMMEDIATELY**: Begin architectural restructuring (cannot proceed without this)
+2. **Week 2**: Complete cultural framework implementation
+3. **Week 3**: Implement security foundation
+4. **Week 4**: Verify quality standards and begin Phase 2
+
+---
+
+## 🚨 CRITICAL NOTICE
+
+**This milestone must be completed before any new development can proceed. The current architectural violations pose significant risks to:**
+
+- **Cultural Sensitivity**: No protection for traditional knowledge
+- **Security**: No input validation or content protection
+- **Technical Debt**: SOLID violations compound over time
+- **Project Success**: Foundation must be solid for future phases
+
+**Status**: **REQUIRES IMMEDIATE ATTENTION** - Previous "100% Complete" status invalidated by architectural analysis.
