@@ -52,3 +52,31 @@ Phase 7 focuses on comprehensive testing and quality assurance to ensure the AlL
 - Performance meets requirements
 - Documentation is complete and accurate
 - System is production-ready
+
+---
+
+## Execution Blueprint (Append-Only)
+
+- Establish test matrix: unit/integration/e2e/a11y/perf/security.
+- Enforce coverage gates in CI; generate reports; link to progress docs.
+
+## Integration Map
+
+- Tests across components, pages, services, tauri commands.
+- Docs: API/user/technical guides under `Docs/`.
+
+## Acceptance Criteria (Phase 7)
+
+- Tests > 85%; TypeScript strict > 95%; a11y AA; perf budgets met; security checks pass.
+
+## Test Plan
+
+- E2E flows for Screens pages; a11y assertions; perf thresholds.
+
+## Cultural Info-Only Guardrails
+
+- Add tests asserting cultural information is displayed and never blocks access.
+
+## References
+
+- `Screens+SoftwareEngineering/*`, rules in `.cursor/rules/*`.

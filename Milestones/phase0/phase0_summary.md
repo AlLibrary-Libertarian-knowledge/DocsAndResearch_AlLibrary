@@ -186,3 +186,53 @@ While Phase 0 successfully established a working foundation, architectural analy
 ---
 
 _Phase 0 Foundation: Successful establishment of technical foundation, enabling the architectural excellence and cultural integration that follows in subsequent phases._
+
+---
+
+## Execution Blueprint (Append-Only)
+
+- Establish baseline repos, CI, linting, formatting, and TS strict mode.
+- Validate Desktop app bootstrap: Tauri v2 startup, SolidJS mount, SQLite connection, file I/O.
+- Seed example screens: `Home`, `Search` with minimal data flow to stores/services.
+- Record initial architectural decisions linking to `Screens+SoftwareEngineering/00_DEVELOPMENT_ARCHITECTURE_GUIDE.md`.
+
+## Integration Map
+
+- Core vision alignment: `Docs/core/Main Idea.md`, `Docs/core/Summary.md`.
+- Screens baseline: `Screens+SoftwareEngineering/README.md`, `HomePage/01_UIUX_Design.md`, `SearchPage/01_UIUX_Design.md`.
+- System diagrams: `04_System_Architecture_Diagrams.md`, `05_Page_Relationship_Diagrams.md`.
+
+## Acceptance Criteria (Phase 0 Baseline)
+
+- App launches on Win/macOS/Linux with Tauri security defaults enabled.
+- TypeScript strict mode enabled (target >90% in Phase 0; will raise to >95% from Phase 1).
+- ESLint + Prettier run clean on scaffolded code.
+- Basic navigation functional; stores/services wired with placeholder data.
+
+## Test Plan
+
+- Unit: bootstrap utilities, environment detection, simple store actions.
+- Integration: app boot, navigation between `Home` and `Search`.
+- E2E: smoke test for launch and quit.
+
+## Performance Budgets (Baseline Targets)
+
+- Initial load: < 3s (temporary baseline; improved in later phases).
+- Memory: < 100MB on idle after launch.
+- Render responsiveness: interactions under 100ms.
+
+## Cultural Info-Only Guardrails
+
+- Cultural context appears as metadata and educational notes only; no access gating in Phase 0.
+- Any references to “validation/approval” in future phases must be interpreted as educational prompts and information transparency, not restrictions.
+
+## Progress Tracking Template
+
+- Metrics to capture: boot time, memory at idle, lint/test status, TypeScript strict coverage.
+- Update `progress/Project_Progress.md` and `progress/Recent_History.md` with each milestone.
+
+## References
+
+- Architecture: `Screens+SoftwareEngineering/00_DEVELOPMENT_ARCHITECTURE_GUIDE.md`
+- Workflow: `Screens+SoftwareEngineering/01_IMPLEMENTATION_WORKFLOW_GUIDE.md`
+- Rules: `.cursor/rules/allibrary-coding-rules.mdc`, `.cursor/rules/allibrary-coherence-rules.mdc`, `.cursor/rules/allibrary-custom-rules.mdc`

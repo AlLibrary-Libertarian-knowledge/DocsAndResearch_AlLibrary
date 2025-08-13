@@ -253,3 +253,60 @@ const searchWithCulturalContext = {
 - **Every interaction** provides educational opportunities
 
 **This phase proves that technology can enhance rather than harm cultural preservation.**
+
+---
+
+## Execution Blueprint (Append-Only)
+
+1) Foundation Components
+- Build Button, Input, Card, Modal, Loading, CulturalIndicator, SecurityBadge with typed props and a11y attributes.
+- Add CSS modules + tokens; cultural variants are visual only.
+
+2) Document Management (Security First)
+- Import pipeline: sanitize metadata → malware scan → legal check → persist with cultural metadata (information fields only).
+- Viewer: educational context panel, sensitivity indicators; no cultural access checks.
+
+3) Search & Organization
+- Local search using SQLite FTS; display cultural context columns; filters are informational labels.
+- Collections: grouping by cultural attributes for learning; no restrictions.
+
+## Integration Map
+
+- Pages: MyDocuments, DocumentDetail/Reader, Collections, Search.
+- Components: foundation + domain/document cards, lists, actions; add `CulturalIndicator`.
+- Services: `documentService`, `collectionService`, validation services; i18n strings for labels.
+
+## Acceptance Criteria (Phase 2)
+
+- Foundation components pass a11y checks; >80% test coverage.
+- Import pipeline enforces malware/legal checks; cultural metadata saved as info-only.
+- Document viewer shows cultural context panel; no access blocking.
+- Local search returns within 500ms on typical dataset; filters affect labels/ordering only.
+
+## Test Plan
+
+- Unit: component props, validators, metadata mappers.
+- Integration: import → persist → view path; search → results → viewer link.
+- A11y: role/aria coverage for foundation components; keyboard nav.
+
+## Performance Budgets
+
+- Import processing overhead: < 300ms per file (excluding IO).
+- Search response: < 500ms; pagination ≥ 20 items per page.
+- Viewer interaction latency: < 50ms for panel toggles.
+
+## Cultural Info-Only Guardrails (Overrides)
+
+- Any references above to “access controls”, “permissions”, “approval”, or “gates” are superseded by project rules: cultural features are informational and educational only; no access restriction logic may be implemented.
+- Provide learning links/resources and provenance; log events for analytics only.
+
+## Progress Tracking
+
+- Track: number of components completed, a11y checklist pass rate, import pipeline tests, search timings.
+- Update progress files per workflow guide.
+
+## References
+
+- Guides: `00_DEVELOPMENT_ARCHITECTURE_GUIDE.md`, `01_IMPLEMENTATION_WORKFLOW_GUIDE.md`
+- Pages: `Screens+SoftwareEngineering/*` for MyDocuments, Collections, Search, DocumentDetail
+- Rules: `.cursor/rules/allibrary-*.mdc`

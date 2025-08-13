@@ -107,3 +107,66 @@
 **Previous "100% Complete" status invalidated** - comprehensive restructuring required.
 
 **All future phases depend on this foundation** - no shortcuts permitted.
+
+---
+
+## Execution Blueprint (Append-Only)
+
+1) Restructure Components & Imports
+- Enforce directory hierarchy: foundation → domain → composite → pages.
+- Add `index.ts` barrel exports in all component/service/store dirs; switch to absolute `@/` imports.
+- Extract types to `src/types/` and ensure strict typing throughout.
+
+2) Cultural Framework (Information-Only)
+- Implement cultural context services/hooks that provide educational context, sources, and sensitivity indicators.
+- Add `CulturalIndicator` UI elements to domain/composite components for information display.
+- IMPORTANT: No access control or approval gates; all cultural features are informational only.
+
+3) Security Validation Pipeline
+- Input validation utilities (type, length, sanitizer) and malware scanning on file imports.
+- Legal-compliance checks (copyright/malware) only; explicitly exclude cultural gating.
+- Integrate into Tauri commands with error propagation; add CI job to run validations on tests.
+
+4) Service Layer & Stores
+- Create typed API/service interfaces per guide; wire stores to services; remove ad-hoc fetches.
+- Add error boundaries and loading states referencing foundation `Loading` component.
+
+## Integration Map
+
+- Architecture: `00_DEVELOPMENT_ARCHITECTURE_GUIDE.md` (SOLID patterns, service layer), `04_System_Architecture_Diagrams.md`.
+- Pages to touch: Home, Search, MyDocuments, Collections, CulturalContexts (indicators only).
+- Types/Stores/Services: unify under `src/types`, `src/stores`, `src/services` with barrels.
+
+## Acceptance Criteria (Phase 1)
+
+- Directory structure and barrels complete; no relative deep imports.
+- TypeScript strict coverage ≥ 95%; ESLint clean; Prettier formatted.
+- Cultural context components and services render informational context only.
+- Security pipeline: input validation + malware + legal-only checks integrated and tested.
+- Tests ≥ 80% across touched modules; a11y checks on updated components.
+
+## Test Plan
+
+- Unit: validators, cultural context mappers, service interfaces, store actions.
+- Integration: component hierarchy rendering, cultural indicators rendering, validation errors.
+- E2E: app smoke, navigation, cultural information visibility with no access blocking.
+
+## Performance Budgets
+
+- Initial load < 2s; navigation < 500ms; complex components render < 100ms.
+- Memory < 100MB typical; no leaks (run basic leak checks during tests).
+
+## Cultural Info-Only Guardrails (Critical)
+
+- Replace any notion of “approval”, “permission”, or “gate” in cultural features with educational messaging and provenance display.
+- If existing docs mention gates/approvals, interpret as “present information and suggested learning materials” only.
+
+## Progress Tracking
+
+- Update `progress/Project_Progress.md`, `progress/Current_Task.md`, `progress/Recent_History.md` for each restructuring milestone.
+- Record KPIs: TS coverage, test coverage, lint status, render timings.
+
+## References
+
+- Rules: `.cursor/rules/allibrary-coding-rules.mdc`, `.cursor/rules/allibrary-coherence-rules.mdc`, `.cursor/rules/allibrary-custom-rules.mdc`
+- Guides: `00_DEVELOPMENT_ARCHITECTURE_GUIDE.md`, `01_IMPLEMENTATION_WORKFLOW_GUIDE.md`
