@@ -111,6 +111,10 @@
   - Local network discovery
   - Bootstrap nodes for initial connection
 
+- **Anonymous Sharing (Tor)**
+  - Optional OnionShare-style anonymous file sharing/receiving via Tor hidden services
+  - See [onionshare-rust-port](../onionshare-rust-port/README.md) for Option B (native Rust port) documentation
+
 ## 🔒 Security Architecture
 
 ### Document Security

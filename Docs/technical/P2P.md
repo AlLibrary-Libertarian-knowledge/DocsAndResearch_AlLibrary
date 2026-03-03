@@ -297,6 +297,8 @@ AlLibrary uses a simple peer-to-peer architecture inspired by BitTorrent:
             └───────────────┘
 ```
 
+For anonymous file sharing and receiving over Tor (OnionShare-style), see [onionshare-rust-port](../onionshare-rust-port/README.md).
+
 **When to Use Tor**:
 
 - Behind strict firewalls
