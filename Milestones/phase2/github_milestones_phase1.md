@@ -1,10 +1,10 @@
-# 📌 GitHub Milestones & Issues: Phase 1 (Foundation)
+# 📌 GitHub Milestones & Issues: Phase 1 (Project Foundation)
 
-This file organizes Phase 1 into actionable GitHub milestones and issues, referencing the original detailed milestone files for full context.
+This file organizes Phase 1 (Project Foundation) into actionable GitHub milestones and issues, referencing the original detailed milestone files for full context. Phase 2 = Architectural Restructuring.
 
 ---
 
-## 🚩 Milestone: Phase 1 – Foundation
+## 🚩 Milestone: Phase 1 – Project Foundation
 
 **Goal:** Establish the core foundation of AlLibrary: project setup, infrastructure, and basic UI.
 
@@ -16,7 +16,7 @@ This file organizes Phase 1 into actionable GitHub milestones and issues, refere
 
 ### 📋 Overview
 
-Phase 1 establishes the foundation for the entire AlLibrary project, including:
+Phase 1 (Project Foundation) establishes the foundation for the entire AlLibrary project, including:
 
 - Complete development environment setup
 - Core infrastructure (database, storage, error handling)
@@ -388,7 +388,7 @@ Ensure application is responsive and accessible.
 
 ## ✅ Milestone Completion Criteria
 
-**Phase 1 is complete when:**
+**Phase 1 (Project Foundation) is complete when:**
 
 ### Technical Requirements
 
@@ -432,7 +432,7 @@ Ensure application is responsive and accessible.
 1. Copy each issue section above into a new GitHub issue
 2. Use the suggested labels for easy filtering
 3. Set time estimates in your project planning tool
-4. Link issues to the Phase 1 milestone
+4. Link issues to the Phase 1 (Project Foundation) milestone
 
 ### Using Labels
 
@@ -446,7 +446,7 @@ Ensure application is responsive and accessible.
 ### Milestone Tracking
 
 - Use GitHub's milestone feature to track overall progress
-- Set a target completion date for Phase 1
+- Set a target completion date for Phase 1 (Project Foundation)
 - Monitor burndown charts to stay on schedule
 - Regular check-ins to assess progress and blockers
 

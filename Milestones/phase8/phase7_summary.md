@@ -1,8 +1,8 @@
-# Phase 7: Testing & Quality Assurance
+# Phase 8: Testing & Quality Assurance
 
 ## Overview
 
-Phase 7 focuses on comprehensive testing and quality assurance to ensure the AlLibrary system is reliable, secure, and meets all requirements.
+Phase 8 focuses on comprehensive testing and quality assurance to ensure the AlLibrary system is reliable, secure, and meets all requirements.
 
 ## Duration
 
@@ -65,7 +65,7 @@ Phase 7 focuses on comprehensive testing and quality assurance to ensure the AlL
 - Tests across components, pages, services, tauri commands.
 - Docs: API/user/technical guides under `Docs/`.
 
-## Acceptance Criteria (Phase 7)
+## Acceptance Criteria (Phase 8)
 
 - Tests > 85%; TypeScript strict > 95%; a11y AA; perf budgets met; security checks pass.
 

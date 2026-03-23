@@ -32,7 +32,7 @@ Comprehensive technical specifications and implementation details:
 - **[technical_operations.md](./technical/technical_operations.md)** - Operations and monitoring
 - **[techs&stacks.md](./technical/techs&stacks.md)** - Technology stack overview
 - **[P2P.md](./technical/P2P.md)** - Peer-to-peer networking implementation
-- **[onionshare-rust-port/](./onionshare-rust-port/README.md)** - Option B: OnionShare Rust port documentation (anonymous file sharing/receiving via Tor)
+- **[onionshare/](./onionshare/README.md)** - OnionShare: how it works + Option B Rust port (anonymous file sharing/receiving via Tor)
 
 ### 🔍 Analysis & Research (`/analysis/`)
 

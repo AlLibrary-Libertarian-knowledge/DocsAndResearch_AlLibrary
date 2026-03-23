@@ -1,8 +1,8 @@
-# Phase 6: Performance & Optimization
+# Phase 7: Performance & Optimization
 
 ## Overview
 
-Phase 6 focuses on optimizing the AlLibrary system's performance, implementing caching strategies, and ensuring the application runs efficiently at scale.
+Phase 7 focuses on optimizing the AlLibrary system's performance, implementing caching strategies, and ensuring the application runs efficiently at scale.
 
 ## Duration
 
@@ -65,7 +65,7 @@ Phase 6 focuses on optimizing the AlLibrary system's performance, implementing c
 - Components: NetworkGraph optimization (use `src/utils/performance.ts`).
 - Router: lazy routes per `optimization/code-splitting-guide.md`.
 
-## Acceptance Criteria (Phase 6)
+## Acceptance Criteria (Phase 7)
 
 - Initial bundle reduced per targets; route loads < 200ms typical.
 - NetworkGraph 60fps sustained on target dataset.

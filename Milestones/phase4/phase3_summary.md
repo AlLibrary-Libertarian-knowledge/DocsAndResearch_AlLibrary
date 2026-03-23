@@ -99,7 +99,7 @@ async fn fetch_onion(url: String, method: String, body: Option<String>) -> Respo
 - Cultural fields are presented for education only; transport is never blocked by cultural sensitivity.
 - Tor overlays provide anonymity and routing diversity to resist censorship.
 
-#### Testing (Phase 3)
+#### Testing (Phase 4)
 - Connectivity & reliability
   - Mock Tor control and verify bootstrap + circuit rotation
   - Connection success ≥90% under intermittent failures (already added pattern for P2P)
@@ -124,24 +124,24 @@ async fn fetch_onion(url: String, method: String, body: Option<String>) -> Respo
 - Add rendezvous onion directory (opt-in) for peer discovery.
 - Background replication budgets and opportunistic seeding.
 
-This plan maps directly to Milestone 3.1 (network setup), 3.2 (content distribution), and 3.3 (distributed search), while adhering to our anti-censorship and cultural information-only rules. Controller concepts are compatible with Stem’s API and Tor’s C API if we later need lower-level control.
+This plan maps directly to Milestone 4.1 (network setup), 4.2 (content distribution), and 4.3 (distributed search), while adhering to our anti-censorship and cultural information-only rules. **This Tor/hidden-service layer will later support OnionShare-style anonymous share and receive (see Phase 6 and [Docs/onionshare](../../Docs/onionshare)).** Controller concepts are compatible with Stem’s API and Tor’s C API if we later need lower-level control.
 
-# Phase 3: P2P Network & Distributed Architecture
+# Phase 4: P2P Network & Distributed Architecture
 
 ## Overview
 
-**UPDATED**: Phase 3 focuses on implementing the P2P network infrastructure with integrated cultural protocols and anti-censorship features, building upon the solid foundation established in Phases 1-2.
+**UPDATED**: Phase 4 focuses on implementing the P2P network infrastructure with integrated cultural protocols and anti-censorship features, building upon the solid foundation established in Phases 1-3.
 
 ## Duration
 
 - **Updated Estimate**: 3 weeks implementation
-- **Start**: Week 7 (After Phase 2 completion)
+- **Start**: Week 7 (After Phase 3 completion)
 - **End**: Week 9
 
 ## Prerequisites
 
-- ✅ Phase 1 completed (architectural restructuring with cultural framework)
-- ✅ Phase 2 completed (foundation components and document management)
+- ✅ Phase 2 completed (architectural restructuring with cultural framework)
+- ✅ Phase 3 completed (foundation components and document management)
 - ✅ Cultural validation system operational
 - ✅ Security infrastructure active
 - ✅ Document management with cultural metadata functional
@@ -256,7 +256,7 @@ const distributedCulturalSearch = {
 #### Anti-Censorship Features
 
 - **Multiple Transport Protocols**: TCP, WebSocket, WebRTC for connection diversity
-- **TOR Integration Preparation**: Structure for onion routing (full implementation in Phase 5)
+- **TOR Integration Preparation**: Structure for onion routing (full implementation in Phase 6)
 - **Content Mirroring**: Automatic replication of important cultural and educational content
 - **Network Resilience**: Automatic route-around for blocked nodes or content
 - **Information Integrity Verification**: Cryptographic verification of content authenticity
@@ -434,7 +434,7 @@ const distributedCulturalSearch = {
 - UI: PeerNetwork, P2PSearch pages; add NetworkHealth widgets.
 - Docs: reference `04_System_Architecture_Diagrams.md` flows (interpret cultural steps as info-only).
 
-## Acceptance Criteria (Phase 3)
+## Acceptance Criteria (Phase 4)
 
 - Peers connect reliably across at least two transports; integrity checks pass.
 - Content distribution replicates and verifies using hashes; metadata includes cultural context as information.

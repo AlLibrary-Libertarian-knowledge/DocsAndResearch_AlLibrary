@@ -1,8 +1,8 @@
-# Phase 8: Release & Deployment
+# Phase 9: Release & Deployment
 
 ## Overview
 
-Phase 8 focuses on preparing for and executing the release of the AlLibrary system, including deployment, monitoring, and post-release support.
+Phase 9 focuses on preparing for and executing the release of the AlLibrary system, including deployment, monitoring, and post-release support.
 
 ## Duration
 
@@ -64,7 +64,7 @@ Phase 8 focuses on preparing for and executing the release of the AlLibrary syst
 
 - Deployment docs in `Docs/deployment/*`; support runbooks in `Docs/development/*`.
 
-## Acceptance Criteria (Phase 8)
+## Acceptance Criteria (Phase 9)
 
 - Release checklist completed; rollback plan available; post-release issues triaged.
 

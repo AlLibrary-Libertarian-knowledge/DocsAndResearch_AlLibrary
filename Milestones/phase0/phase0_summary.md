@@ -1,238 +1,113 @@
-# Phase 0: Project Foundation (COMPLETED)
+# Phase 0: Research and Methodology
 
 ## Overview
 
-**COMPLETED**: Phase 0 represents the foundational work that was completed before the architectural analysis. This phase established the basic project structure and initial development environment.
+Phase 0 establishes the academic and methodological foundation for the AlLibrary project. It includes introduction, literature review, materials and methods aligned with thesis/TCC structure, and a planned proof-of-concept for anonymous file sharing via Tor that will inform integration decisions (OnionShare Option A vs Option B).
 
-## Duration
-
-- **Actual Duration**: 4 weeks
-- **Completion Date**: January 2025
-- **Status**: ✅ **100% COMPLETE**
-
-## Completed Goals
-
-### 1. **Project Setup** ✅
-
-- ✅ Tauri v2 + SolidJS project initialization
-- ✅ Development environment configuration
-- ✅ Build pipeline and tooling setup
-- ✅ Git repository and version control
-- ✅ Basic project structure creation
-
-### 2. **Core Infrastructure Foundation** ✅
-
-- ✅ SQLite database system setup
-- ✅ Basic file storage system
-- ✅ Initial error handling framework
-- ✅ Tauri backend service foundation
-- ✅ SolidJS frontend framework setup
-
-### 3. **Basic UI Framework** ✅
-
-- ✅ Initial application layout structure
-- ✅ Basic navigation system
-- ✅ Component library foundation
-- ✅ CSS styling framework setup
-- ✅ Theme and design token system
-
-### 4. **Initial Screen Development** ✅
-
-- ✅ HomePage basic implementation
-- ✅ SearchPage foundation
-- ✅ Basic routing system
-- ✅ Layout components (Header, Sidebar, Footer)
-- ✅ Initial component structure
-
-## Key Achievements
-
-### **Technical Foundation Established**
-
-- **Tauri v2 + SolidJS**: Modern, secure desktop application framework
-- **SQLite Database**: Local-first data storage architecture
-- **Component System**: Initial reusable component library
-- **Development Workflow**: Git, build tools, and development environment
-
-### **Architecture Foundation**
-
-- **Desktop Application**: Cross-platform desktop app structure
-- **Local Storage**: SQLite-based local data management
-- **Modern Frontend**: SolidJS reactive UI framework
-- **Secure Backend**: Rust-based Tauri backend services
-
-### **Development Environment**
-
-- **TypeScript**: Type-safe development environment
-- **Build System**: Optimized build pipeline with Vite
-- **Development Tools**: Hot reload, debugging, and development server
-- **Version Control**: Git repository with proper structure
-
-## Completed Deliverables
-
-### **Core Project Structure**
-
-```
-DesktopApp_AlLibrary/
-├── src/
-│   ├── components/          # Initial component structure
-│   ├── pages/              # Basic page components
-│   ├── services/           # Service layer foundation
-│   ├── stores/             # State management setup
-│   └── styles/             # Styling and theme system
-├── src-tauri/              # Rust backend foundation
-├── public/                 # Static assets
-└── Configuration files      # Build, TypeScript, and tool configs
-```
-
-### **Basic Functionality**
-
-- **Application Launch**: Working desktop application
-- **Basic Navigation**: Route-based navigation system
-- **Initial UI**: HomePage and SearchPage basic implementations
-- **Database Connection**: SQLite integration and basic queries
-- **File System**: Basic file operations and storage
-
-### **Development Infrastructure**
-
-- **Package Configuration**: package.json with all dependencies
-- **TypeScript Setup**: tsconfig.json with strict typing
-- **Build Configuration**: Vite and Tauri build systems
-- **Development Scripts**: npm scripts for development workflow
-- **Code Quality Tools**: ESLint, Prettier configuration
-
-## Foundation for Future Development
-
-### **What This Phase Enabled**
-
-- **Solid Foundation**: Reliable base for advanced feature development
-- **Modern Stack**: State-of-the-art technology choices
-- **Security Ready**: Tauri's security model for desktop applications
-- **Scalable Architecture**: Foundation that supports complex features
-- **Development Efficiency**: Modern tooling for rapid development
-
-### **What Required Restructuring**
-
-- **Component Architecture**: Needed SOLID principles and proper hierarchy
-- **Cultural Framework**: Required comprehensive cultural sensitivity system
-- **Security Infrastructure**: Needed complete input validation and protection
-- **Service Layer**: Required proper separation of concerns and API design
-- **State Management**: Needed reactive patterns and proper data flow
-
-## Transition to Current Architecture
-
-### **Why Restructuring Was Needed**
-
-While Phase 0 successfully established a working foundation, architectural analysis revealed:
-
-1. **Component Hierarchy Violations**: Components didn't follow foundation → domain → composite → pages pattern
-2. **Missing Infrastructure**: Core directories and services were incomplete
-3. **Cultural Framework Absent**: No cultural sensitivity or protection systems
-4. **Security Gaps**: Missing input validation and content protection
-5. **SOLID Principle Violations**: Components had multiple responsibilities
-
-### **Value Preserved**
-
-- **Working Application**: Functional desktop app foundation
-- **Technology Choices**: Excellent stack selection (Tauri + SolidJS + SQLite)
-- **Development Environment**: Efficient development workflow
-- **Basic UI Components**: Reusable components that can be restructured
-- **Database Foundation**: SQLite integration ready for enhancement
-
-## Historical Context
-
-### **Phase 0 Success Metrics** ✅
-
-- **Technical Setup**: 100% complete working development environment
-- **Basic Functionality**: 100% working application with navigation
-- **Foundation Quality**: 100% solid technology stack choices
-- **Development Efficiency**: 100% modern development workflow established
-
-### **Lessons Learned**
-
-- **Rapid Prototyping Success**: Quick establishment of working foundation
-- **Technology Validation**: Proven technology stack choices
-- **Architecture Evolution**: Need for architectural refinement as complexity grows
-- **Documentation Importance**: Value of comprehensive documentation for complex projects
-
-## Recognition of Phase 0 Contributions
-
-### **What Was Done Right**
-
-- **Excellent Technology Choices**: Tauri v2 + SolidJS + SQLite perfect for AlLibrary
-- **Working Foundation**: Functional application ready for enhancement
-- **Development Workflow**: Efficient development environment and tools
-- **Basic Structure**: Good starting point for architectural refinement
-
-### **Natural Evolution**
-
-- **From Prototype to Production**: Phase 0 → Phase 1 represents natural evolution
-- **Architectural Maturation**: Moving from working prototype to production architecture
-- **Quality Enhancement**: Elevating from functional to excellent
-- **Mission Alignment**: Ensuring technical choices support cultural and anti-censorship goals
+**Status**: Planned  
+**Duration**: To be scheduled (research and POC)  
+**Prerequisites**: None (initial phase)
 
 ---
 
-## 🏆 **Phase 0 Status: FOUNDATION SUCCESS**
+## 1. Introdução (Introduction)
 
-**Phase 0 successfully established the technological foundation that enables AlLibrary's mission:**
+### Problem
 
-- **✅ Technology Stack**: Perfect choices for decentralized, culturally-sensitive library
-- **✅ Working Application**: Functional desktop app ready for enhancement
-- **✅ Development Environment**: Efficient workflow for continued development
-- **✅ Foundation Quality**: Solid base supporting complex future features
+- Information control and censorship have historically been used as instruments of power, limiting democratic access to knowledge.
+- Centralized systems enable narrative manipulation and cultural erasure.
+- There is a need for decentralized, censorship-resistant access to information and for mechanisms that support anonymous sharing when needed.
 
-**Phase 0 → Phase 1 Transition**: From working prototype to production-ready architecture with cultural integration and anti-censorship capabilities.
+### Objective
+
+- AlLibrary aims to be a decentralized library platform with the capability for anonymous document sharing when users require it.
+- This phase establishes the research basis and validates the feasibility of integrating anonymous transfer (Tor/onion services) into the platform.
+
+### Relevance of Anonymous Transfer
+
+- Tor and onion services provide anonymity and censorship resistance for both readers and sharers.
+- Anonymous share/receive is relevant to anti-censorship goals and to privacy in sensitive or high-risk contexts.
+- A proof-of-concept will validate architecture and performance before full integration (Phase 6).
 
 ---
 
-_Phase 0 Foundation: Successful establishment of technical foundation, enabling the architectural excellence and cultural integration that follows in subsequent phases._
+## 2. Revisão Bibliográfica (Literature Review / State of the Art)
+
+### Tor and Onion Services
+
+- **Tor design**: Foundational work on onion routing (e.g. Dingledine, Mathewson & Syverson, *Tor: The second-generation onion router*, USENIX Security Symposium 2004) and subsequent surveys on the Tor anonymity network.
+- **Onion services**: Use of .onion hidden services for hosting content and services without exposing server or client IPs; relevance to censorship resistance and privacy.
+
+### P2P and Anonymity
+
+- **Decentralized anonymity**: Literature on scaling strong anonymity in decentralized networks (e.g. DAENet-style and mix-network approaches).
+- **Next-generation P2P**: Comparative work on IPFS and related P2P data networks; the challenge of strong, censorship-resistant anonymity in P2P transfer.
+- **Academic references**: To be drawn from established surveys and papers on Tor anonymity, P2P systems, and secure file sharing (sources to be listed in the formal literature review document).
+
+### Related Work: OnionShare
+
+- **OnionShare** provides anonymous file share and receive over Tor via a local HTTP server exposed as an onion service.
+- **Modes**: Share (serve files/folders for download), Receive (accept uploads and text messages), plus optional Website and Chat modes.
+- **Project documentation**: The AlLibrary project maintains an analysis of how OnionShare works and integration options:
+  - [Docs/onionshare/README.md](../../Docs/onionshare/README.md)
+  - [Docs/onionshare/how-onionshare-works.md](../../Docs/onionshare/how-onionshare-works.md)
+- **Integration options for AlLibrary**:
+  - **Option A (Subprocess)**: Run OnionShare CLI from Tauri; minimal implementation effort; requires OnionShare as dependency.
+  - **Option B (Rust port)**: Port OnionShare-like behaviour to Rust within AlLibrary; single binary, full control; see [Docs/onionshare/onionshare-rust-port/README.md](../../Docs/onionshare/onionshare-rust-port/README.md).
+
+The literature review section of the thesis will cite OnionShare as related work and reference the project’s OnionShare documentation for functional analysis and Option A vs B comparison.
 
 ---
 
-## Execution Blueprint (Append-Only)
+## 3. Materiais e Métodos / Metodologia (Materials and Methods)
 
-- Establish baseline repos, CI, linting, formatting, and TS strict mode.
-- Validate Desktop app bootstrap: Tauri v2 startup, SolidJS mount, SQLite connection, file I/O.
-- Seed example screens: `Home`, `Search` with minimal data flow to stores/services.
-- Record initial architectural decisions linking to `Screens+SoftwareEngineering/00_DEVELOPMENT_ARCHITECTURE_GUIDE.md`.
+### Proof of Concept (to be carried out)
 
-## Integration Map
+A proof-of-concept for anonymous file sharing via Tor onion services will be designed and implemented to:
 
-- Core vision alignment: `Docs/core/Main Idea.md`, `Docs/core/Summary.md`.
-- Screens baseline: `Screens+SoftwareEngineering/README.md`, `HomePage/01_UIUX_Design.md`, `SearchPage/01_UIUX_Design.md`.
-- System diagrams: `04_System_Architecture_Diagrams.md`, `05_Page_Relationship_Diagrams.md`.
+- Validate technical feasibility (Tor, hidden services, HTTP server, chunked transfer).
+- Inform the choice between OnionShare Option A (subprocess) and Option B (Rust port) for AlLibrary.
+- Produce a short report on architecture, performance, and recommendation.
 
-## Acceptance Criteria (Phase 0 Baseline)
+**Planned POC scope** (described as future work):
 
-- App launches on Win/macOS/Linux with Tauri security defaults enabled.
-- TypeScript strict mode enabled (target >90% in Phase 0; will raise to >95% from Phase 1).
-- ESLint + Prettier run clean on scaffolded code.
-- Basic navigation functional; stores/services wired with placeholder data.
+1. **Tor and hidden service**: Local Tor process (or connection to existing Tor); creation of an onion v3 hidden service mapping to a local port.
+2. **HTTP server**: A simple HTTP server (e.g. Axum in Rust) to serve files (share mode) and/or accept file uploads (receive mode).
+3. **Optional tracker/lobby**: Lightweight in-memory “tracker” or lobby for discovery (no persistent file storage) to explore P2P discovery over Tor.
+4. **Chunked transfer**: Files transferred in chunks; optional per-chunk encryption (e.g. XChaCha20-Poly1305) for confidentiality.
+5. **Minimal GUI or CLI**: A small interface to exercise share and receive and to verify that traffic is routed via Tor and that anonymity properties hold in tests.
 
-## Test Plan
+### Methods
 
-- Unit: bootstrap utilities, environment detection, simple store actions.
-- Integration: app boot, navigation between `Home` and `Search`.
-- E2E: smoke test for launch and quit.
+- **Literature review**: Tor, P2P, anonymity, and related work (including OnionShare).
+- **Functional analysis of OnionShare**: Using project docs under [Docs/onionshare](../../Docs/onionshare) (modes, components, integration options).
+- **POC design**: Architecture and data flow for the planned POC.
+- **POC implementation and tests**: Implementation of the above scope and basic tests (connectivity, transfer, optional encryption).
+- **Outcome**: Recommendation for AlLibrary (Option A vs Option B) and reference to [Docs/onionshare/onionshare-rust-port](../../Docs/onionshare/onionshare-rust-port) for the chosen path.
 
-## Performance Budgets (Baseline Targets)
+### Deliverables (planned)
 
-- Initial load: < 3s (temporary baseline; improved in later phases).
-- Memory: < 100MB on idle after launch.
-- Render responsiveness: interactions under 100ms.
+- Written introduction and literature review sections (thesis/TCC).
+- Methodology and POC design document.
+- POC implementation and short report (architecture, performance, lessons learned).
+- Recommendation: Option A vs Option B for AlLibrary, with pointer to [Docs/onionshare/onionshare-rust-port](../../Docs/onionshare/onionshare-rust-port) for implementation (e.g. architecture overview and implementation roadmap).
 
-## Cultural Info-Only Guardrails
+---
 
-- Cultural context appears as metadata and educational notes only; no access gating in Phase 0.
-- Any references to “validation/approval” in future phases must be interpreted as educational prompts and information transparency, not restrictions.
+## 4. Integration with Later Phases
 
-## Progress Tracking Template
+- **Phase 1**: Development can proceed in parallel or after Phase 0; no technical dependency.
+- **Phase 4 (P2P and Tor overlay)**: Will provide Tor manager and hidden-service support; Phase 0 POC validates concepts that Phase 4 and Phase 6 build on.
+- **Phase 6 (Security and anti-censorship)**: Will implement full TOR integration and OnionShare-style anonymous share/receive per the Option A or B decision; see [Docs/onionshare/onionshare-rust-port](../../Docs/onionshare/onionshare-rust-port) for the Rust port specification (Option B).
 
-- Metrics to capture: boot time, memory at idle, lint/test status, TypeScript strict coverage.
-- Update `progress/Project_Progress.md` and `progress/Recent_History.md` with each milestone.
+---
 
-## References
+## 5. References (project documentation)
 
-- Architecture: `Screens+SoftwareEngineering/00_DEVELOPMENT_ARCHITECTURE_GUIDE.md`
-- Workflow: `Screens+SoftwareEngineering/01_IMPLEMENTATION_WORKFLOW_GUIDE.md`
-- Rules: `.cursor/rules/allibrary-coding-rules.mdc`, `.cursor/rules/allibrary-coherence-rules.mdc`, `.cursor/rules/allibrary-custom-rules.mdc`
+- [Docs/onionshare](../../Docs/onionshare) – OnionShare analysis and integration options
+- [Docs/onionshare/how-onionshare-works.md](../../Docs/onionshare/how-onionshare-works.md) – Original OnionShare behaviour
+- [Docs/onionshare/onionshare-rust-port/README.md](../../Docs/onionshare/onionshare-rust-port/README.md) – Option B: Rust port overview
+- [Docs/onionshare/onionshare-rust-port/01_architecture_overview.md](../../Docs/onionshare/onionshare-rust-port/01_architecture_overview.md) – Architecture and integration points
+- [Docs/onionshare/onionshare-rust-port/06_implementation_roadmap.md](../../Docs/onionshare/onionshare-rust-port/06_implementation_roadmap.md) – Phased implementation (Share mode, Receive mode, etc.)
+
+Academic references (Tor, P2P, anonymity) will be listed in the formal literature review document and in the thesis reference list.

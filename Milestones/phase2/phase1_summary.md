@@ -1,8 +1,8 @@
-# Phase 1: Foundation & Architectural Restructuring
+# Phase 2: Foundation & Architectural Restructuring
 
 ## Overview
 
-**UPDATED**: Phase 1 has been restructured to address critical architectural violations and establish proper SOLID foundation with mandatory cultural and security integration.
+**UPDATED**: Phase 2 has been restructured to address critical architectural violations and establish proper SOLID foundation with mandatory cultural and security integration.
 
 ## Duration
 
@@ -106,7 +106,7 @@
 
 **Previous "100% Complete" status invalidated** - comprehensive restructuring required.
 
-**All future phases depend on this foundation** - no shortcuts permitted.
+**All future phases depend on this foundation** - no shortcuts permitted. (Phase 1 = Project Foundation is complete.)
 
 ---
 
@@ -137,7 +137,7 @@
 - Pages to touch: Home, Search, MyDocuments, Collections, CulturalContexts (indicators only).
 - Types/Stores/Services: unify under `src/types`, `src/stores`, `src/services` with barrels.
 
-## Acceptance Criteria (Phase 1)
+## Acceptance Criteria (Phase 2)
 
 - Directory structure and barrels complete; no relative deep imports.
 - TypeScript strict coverage ≥ 95%; ESLint clean; Prettier formatted.

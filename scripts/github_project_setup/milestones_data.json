@@ -1,0 +1,502 @@
+{
+  "_comment": "Source of truth for GitHub Project Gantt setup. Priority options (project uses): p0, p1, p2. Size options: xs, s, m, l, xl. Estimate is in hours. Iteration titles must match iterations created in the project settings.",
+  "github": {
+    "org": "AlLibrary-Libertarian-knowledge",
+    "repo": "DesktopApp_AlLibrary",
+    "project_number": 1
+  },
+  "phases": [
+    {
+      "number": 0,
+      "title": "Phase 0: Research and Methodology",
+      "status": "planned",
+      "start_date": "2026-03-04",
+      "end_date": "2026-05-18",
+      "focus": "Literature review (Tor, P2P, anonymity, OnionShare), materials and methods, proof-of-concept design for anonymous file sharing via Tor.",
+      "labels": ["phase-0", "research"],
+      "sub_milestones": [
+        {
+          "id": "0.1.1",
+          "title": "Milestone 0.1.1: Report 1 – Ficha Cadastral",
+          "description": "Initial registration document (ficha cadastral) for the research project, establishing project identity, scope, and institutional registration.",
+          "labels": ["phase-0", "research", "documentation"],
+          "start_date": "2026-03-04",
+          "end_date": "2026-03-09",
+          "priority": "p1",
+          "size": "s",
+          "estimate": 8,
+          "iteration": "Phase 0",
+          "type": "Task"
+        },
+        {
+          "id": "0.1.2",
+          "title": "Milestone 0.1.2: Report 2 – Revisão Bibliográfica",
+          "description": "Bibliographic review covering Tor/onion services, P2P anonymity networks, OnionShare, and related censorship-resistance literature. References: Dingledine et al., P2P surveys, Docs/onionshare/README.md and how-onionshare-works.md.",
+          "labels": ["phase-0", "research", "documentation"],
+          "start_date": "2026-03-09",
+          "end_date": "2026-03-30",
+          "priority": "p1",
+          "size": "m",
+          "estimate": 32,
+          "iteration": "Phase 0",
+          "type": "Task"
+        },
+        {
+          "id": "0.1.3",
+          "title": "Milestone 0.1.3: Report 3 – Sumário e Primeiro Capítulo Teórico",
+          "description": "Write the table of contents (sumário) and the first theoretical chapter, covering background theory on anonymity, Tor architecture, P2P systems, and related work.",
+          "labels": ["phase-0", "research", "documentation"],
+          "start_date": "2026-03-30",
+          "end_date": "2026-04-20",
+          "priority": "p1",
+          "size": "m",
+          "estimate": 40,
+          "iteration": "Phase 0",
+          "type": "Task"
+        },
+        {
+          "id": "0.1.4",
+          "title": "Milestone 0.1.4: Report 4 – Documento de Projeto",
+          "description": "Write the full project document (documento de projeto): methodology, materials and methods, POC design for anonymous file sharing via Tor, Option A vs Option B analysis for OnionShare integration in AlLibrary.",
+          "labels": ["phase-0", "research", "architecture", "documentation"],
+          "start_date": "2026-04-20",
+          "end_date": "2026-05-18",
+          "priority": "p0",
+          "size": "l",
+          "estimate": 56,
+          "iteration": "Phase 0",
+          "type": "Task"
+        },
+        {
+          "id": "0.1",
+          "title": "Milestone 0.1: Literature Review",
+          "description": "Write the Introduction and Revisão Bibliográfica (Literature Review) sections covering Tor/onion services, P2P anonymity, and OnionShare as related work. References: Tor design (Dingledine et al.), P2P surveys, Docs/onionshare/README.md and how-onionshare-works.md.",
+          "labels": ["phase-0", "research", "documentation"],
+          "priority": "p2",
+          "size": "m",
+          "estimate": 40,
+          "iteration": "Phase 0",
+          "type": "Task"
+        },
+        {
+          "id": "0.2",
+          "title": "Milestone 0.2: POC Design and Implementation Plan",
+          "description": "Write the Materiais e Métodos section and design the proof-of-concept for anonymous file sharing via Tor (onion v3 + Axum HTTP server, optional tracker, chunked transfer, optional XChaCha20-Poly1305). Deliverable: POC design document and Option A vs Option B recommendation for AlLibrary per Docs/onionshare/onionshare-rust-port/README.md.",
+          "labels": ["phase-0", "research", "architecture"],
+          "priority": "p2",
+          "size": "l",
+          "estimate": 80,
+          "iteration": "Phase 0",
+          "type": "Task"
+        }
+      ]
+    },
+    {
+      "number": 1,
+      "title": "Phase 1: Project Foundation",
+      "status": "completed",
+      "start_date": "2026-02-10",
+      "end_date": "2026-03-11",
+      "focus": "Technology stack setup (Tauri v2 + SolidJS + SQLite), basic infrastructure, initial UI framework, development environment.",
+      "labels": ["phase-1", "foundation"],
+      "sub_milestones": [
+        {
+          "id": "1.1",
+          "title": "Milestone 1.1: Project Setup",
+          "description": "Tauri v2 + SolidJS project initialization, TypeScript configuration, ESLint/Prettier, Git setup, build pipeline, and development environment. See Milestones/phase2/milestone1.1_project_setup.md.",
+          "labels": ["phase-1", "setup", "infrastructure"],
+          "priority": "p1",
+          "size": "s",
+          "estimate": 16,
+          "iteration": "Phase 1",
+          "type": "Task"
+        },
+        {
+          "id": "1.2",
+          "title": "Milestone 1.2: Core Infrastructure",
+          "description": "SQLite database foundation, basic file storage system, initial error handling framework, Tauri backend service foundation. See Milestones/phase2/milestone1.2_core_infrastructure.md.",
+          "labels": ["phase-1", "infrastructure", "backend"],
+          "priority": "p1",
+          "size": "m",
+          "estimate": 32,
+          "iteration": "Phase 1",
+          "type": "Task"
+        },
+        {
+          "id": "1.3",
+          "title": "Milestone 1.3: Basic UI Framework",
+          "description": "Initial HomePage and SearchPage implementation, basic navigation and routing system, SolidJS frontend framework setup. See Milestones/phase2/milestone1.3_basic_ui_framework.md.",
+          "labels": ["phase-1", "ui", "frontend"],
+          "priority": "p2",
+          "size": "m",
+          "estimate": 24,
+          "iteration": "Phase 1",
+          "type": "Task"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Phase 2: Architectural Restructuring",
+      "status": "in_progress",
+      "start_date": "2026-03-11",
+      "end_date": "2026-04-01",
+      "focus": "SOLID architecture, mandatory component hierarchy (foundation→domain→composite→pages), cultural framework (5-level sensitivity), security infrastructure, service layer and database integration.",
+      "labels": ["phase-2", "architecture", "critical-path"],
+      "sub_milestones": [
+        {
+          "id": "2.1",
+          "title": "Milestone 2.1: Component Hierarchy Restructuring",
+          "description": "Fix SOLID violations: establish foundation→domain→composite→pages hierarchy, create src/types/ and src/hooks/, strict TypeScript mode. Week 1. See Milestones/phase2/phase1_summary.md.",
+          "labels": ["phase-2", "architecture", "refactor"],
+          "priority": "p0",
+          "size": "l",
+          "estimate": 40,
+          "iteration": "Phase 2",
+          "type": "Task"
+        },
+        {
+          "id": "2.2",
+          "title": "Milestone 2.2: Cultural and Security Infrastructure",
+          "description": "Implement 5-level cultural sensitivity system, cultural validation pipeline, input validation, malware scanning integration, content protection mechanisms. Week 2.",
+          "labels": ["phase-2", "security", "cultural-framework"],
+          "priority": "p0",
+          "size": "l",
+          "estimate": 48,
+          "iteration": "Phase 2",
+          "type": "Task"
+        },
+        {
+          "id": "2.3",
+          "title": "Milestone 2.3: Service Layer and Database Integration",
+          "description": "Build comprehensive service architecture following SOLID principles, finalize SQLite schema with cultural metadata, establish service layer contracts and error handling. Week 3.",
+          "labels": ["phase-2", "backend", "database"],
+          "priority": "p1",
+          "size": "m",
+          "estimate": 32,
+          "iteration": "Phase 2",
+          "type": "Task"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Phase 3: Foundation Components & Document Management",
+      "status": "planned",
+      "start_date": "2026-04-01",
+      "end_date": "2026-04-29",
+      "focus": "Foundation UI component library, document management system with cultural classification, local search and collection organization.",
+      "labels": ["phase-3", "components", "document-management"],
+      "sub_milestones": [
+        {
+          "id": "3.1",
+          "title": "Milestone 3.1: Document Management System",
+          "description": "Implement document import with cultural classification, document storage with cultural metadata, document preview with sensitivity controls, document lifecycle management. See Milestones/phase3/milestone2.1_document_management.md.",
+          "labels": ["phase-3", "document-management"],
+          "priority": "p1",
+          "size": "l",
+          "estimate": 40,
+          "iteration": "Phase 3",
+          "type": "Task"
+        },
+        {
+          "id": "3.2",
+          "title": "Milestone 3.2: Local Search",
+          "description": "Implement local search with cultural filtering, collection management with cultural grouping, tagging system with cultural context. See Milestones/phase3/milestone2.2_local_search.md.",
+          "labels": ["phase-3", "search"],
+          "priority": "p1",
+          "size": "m",
+          "estimate": 32,
+          "iteration": "Phase 3",
+          "type": "Task"
+        },
+        {
+          "id": "3.3",
+          "title": "Milestone 3.3: Collections and Organization",
+          "description": "Build collections and organization features: tagging, grouping, sorting with cultural context as information only. See Milestones/phase3/milestone2.3_collections_organization.md.",
+          "labels": ["phase-3", "ui"],
+          "priority": "p2",
+          "size": "m",
+          "estimate": 24,
+          "iteration": "Phase 3",
+          "type": "Task"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Phase 4: P2P Network & Cultural Protocols",
+      "status": "planned",
+      "start_date": "2026-04-29",
+      "end_date": "2026-05-20",
+      "focus": "P2P infrastructure with multi-transport peer connections, Tor overlay (onion v3 hidden services as peer IDs), content distribution and replication, network search aggregation.",
+      "labels": ["phase-4", "p2p", "networking"],
+      "sub_milestones": [
+        {
+          "id": "4.1",
+          "title": "Milestone 4.1: P2P Network Setup",
+          "description": "Implement multi-transport peer connections, peer identity/address system, connection management, Tor overlay integration (Rust Arti or tor binary + SOCKS5). See Milestones/phase4/milestone3.1_p2p_network_setup.md.",
+          "labels": ["phase-4", "p2p", "tor"],
+          "priority": "p1",
+          "size": "xl",
+          "estimate": 56,
+          "iteration": "Phase 4",
+          "type": "Task"
+        },
+        {
+          "id": "4.2",
+          "title": "Milestone 4.2: Content Distribution",
+          "description": "P2P content replication with integrity verification (hashes), cultural metadata as information-only labels, document distribution protocol. See Milestones/phase4/milestone3.2_content_distribution.md.",
+          "labels": ["phase-4", "p2p", "replication"],
+          "priority": "p1",
+          "size": "l",
+          "estimate": 40,
+          "iteration": "Phase 4",
+          "type": "Task"
+        },
+        {
+          "id": "4.3",
+          "title": "Milestone 4.3: Network Search",
+          "description": "Federated search across peers, result aggregation with cultural labels (no access filtering), network health monitoring. See Milestones/phase4/milestone3.3_network_search.md.",
+          "labels": ["phase-4", "search", "p2p"],
+          "priority": "p2",
+          "size": "m",
+          "estimate": 32,
+          "iteration": "Phase 4",
+          "type": "Task"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Phase 5: Advanced Features",
+      "status": "planned",
+      "start_date": "2026-05-20",
+      "end_date": "2026-06-10",
+      "focus": "Advanced document features (annotations, version history, format conversion), smart collections, advanced search with cultural annotations.",
+      "labels": ["phase-5", "advanced-features"],
+      "sub_milestones": [
+        {
+          "id": "5.1",
+          "title": "Milestone 5.1: Advanced Document Features",
+          "description": "Document annotations, version history, format conversion (PDF/EPUB/etc.), advanced metadata management. See Milestones/phase5/milestone4.1_advanced_document_features.md.",
+          "labels": ["phase-5", "document-management"],
+          "priority": "p2",
+          "size": "l",
+          "estimate": 40,
+          "iteration": "Phase 5",
+          "type": "Task"
+        },
+        {
+          "id": "5.2",
+          "title": "Milestone 5.2: Smart Collections",
+          "description": "Smart/dynamic collections based on rules and cultural context, collection sharing, collection discovery. See Milestones/phase5/milestone4.2_smart_collections.md.",
+          "labels": ["phase-5", "collections"],
+          "priority": "p2",
+          "size": "m",
+          "estimate": 32,
+          "iteration": "Phase 5",
+          "type": "Task"
+        },
+        {
+          "id": "5.3",
+          "title": "Milestone 5.3: Advanced Search",
+          "description": "Full-text search, semantic search with cultural annotation, faceted search, search history. See Milestones/phase5/milestone4.3_advanced_search.md.",
+          "labels": ["phase-5", "search"],
+          "priority": "p2",
+          "size": "m",
+          "estimate": 32,
+          "iteration": "Phase 5",
+          "type": "Task"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Phase 6: Security & Anti-Censorship",
+      "status": "planned",
+      "start_date": "2026-06-10",
+      "end_date": "2026-07-08",
+      "focus": "Complete TOR integration (transport toggle, IPC hardening), OnionShare integration (anonymous share/receive over Tor, Option B Rust port: tor_manager + Axum + Tauri commands), security hardening, API/plugin surface.",
+      "labels": ["phase-6", "security", "tor", "onionshare"],
+      "sub_milestones": [
+        {
+          "id": "6.1",
+          "title": "Milestone 6.1: Performance Optimization",
+          "description": "Caching strategies, database query optimization, search performance, resource management. See Milestones/phase6/milestone5.1_performance_optimization.md.",
+          "labels": ["phase-6", "performance"],
+          "priority": "p2",
+          "size": "m",
+          "estimate": 24,
+          "iteration": "Phase 6",
+          "type": "Task"
+        },
+        {
+          "id": "6.2",
+          "title": "Milestone 6.2: Security Implementation",
+          "description": "TOR transport toggle, Tauri IPC hardening, input sanitization audit, security headers, complete security validation pipeline. See Milestones/phase6/milestone5.2_security_implementation.md.",
+          "labels": ["phase-6", "security", "tor"],
+          "priority": "p0",
+          "size": "l",
+          "estimate": 48,
+          "iteration": "Phase 6",
+          "type": "Task"
+        },
+        {
+          "id": "6.3",
+          "title": "Milestone 6.3: Offline Support",
+          "description": "Offline-first architecture, local cache management, sync strategies, graceful degradation. See Milestones/phase6/milestone5.3_offline_support.md.",
+          "labels": ["phase-6", "offline"],
+          "priority": "p2",
+          "size": "m",
+          "estimate": 32,
+          "iteration": "Phase 6",
+          "type": "Task"
+        },
+        {
+          "id": "6.4",
+          "title": "Milestone 6.4: OnionShare Integration",
+          "description": "Anonymous file share and receive over Tor (Option B Rust port): extend tor_manager, Axum routes for share/receive, Tauri commands start_onion_share/stop_onion_share/start_onion_receive/stop_onion_receive. Share mode first, then Receive mode. See Milestones/phase6/milestone6.4_onionshare_integration.md.",
+          "labels": ["phase-6", "onionshare", "tor", "security"],
+          "priority": "p1",
+          "size": "xl",
+          "estimate": 64,
+          "iteration": "Phase 6",
+          "type": "Task"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Phase 7: Polish & Accessibility",
+      "status": "planned",
+      "start_date": "2026-07-08",
+      "end_date": "2026-07-29",
+      "focus": "UI enhancement with cultural themes, accessibility standards, user experience polish, user features.",
+      "labels": ["phase-7", "ui", "accessibility"],
+      "sub_milestones": [
+        {
+          "id": "7.1",
+          "title": "Milestone 7.1: UI Enhancement",
+          "description": "Cultural themes, dark/light mode, animations, UI polish across all screens. See Milestones/phase7/milestone6.1_ui_enhancement.md.",
+          "labels": ["phase-7", "ui"],
+          "priority": "p2",
+          "size": "m",
+          "estimate": 32,
+          "iteration": "Phase 7",
+          "type": "Task"
+        },
+        {
+          "id": "7.2",
+          "title": "Milestone 7.2: User Features",
+          "description": "User preferences, reading history, bookmarks, personalization, notification system. See Milestones/phase7/milestone6.2_user_features.md.",
+          "labels": ["phase-7", "ux"],
+          "priority": "p2",
+          "size": "s",
+          "estimate": 24,
+          "iteration": "Phase 7",
+          "type": "Task"
+        },
+        {
+          "id": "7.3",
+          "title": "Milestone 7.3: Accessibility",
+          "description": "WCAG compliance, screen reader support, keyboard navigation, high-contrast themes, i18n groundwork. See Milestones/phase7/milestone6.3_accessibility.md.",
+          "labels": ["phase-7", "accessibility"],
+          "priority": "p1",
+          "size": "m",
+          "estimate": 32,
+          "iteration": "Phase 7",
+          "type": "Task"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "Phase 8: Testing & Documentation",
+      "status": "planned",
+      "start_date": "2026-07-29",
+      "end_date": "2026-08-19",
+      "focus": "Comprehensive testing (unit, integration, e2e, security, cultural scenarios), technical and user documentation, final polish.",
+      "labels": ["phase-8", "testing", "documentation"],
+      "sub_milestones": [
+        {
+          "id": "8.1",
+          "title": "Milestone 8.1: Testing Suite",
+          "description": "Unit tests (Rust + TS), integration tests, end-to-end tests (Tauri/Playwright), security tests, cultural scenario tests (info-only guardrails). See Milestones/phase8/milestone7.1_testing.md.",
+          "labels": ["phase-8", "testing"],
+          "priority": "p1",
+          "size": "l",
+          "estimate": 48,
+          "iteration": "Phase 8",
+          "type": "Task"
+        },
+        {
+          "id": "8.2",
+          "title": "Milestone 8.2: Documentation",
+          "description": "User documentation, API documentation (Tauri commands), developer guides, contribution guidelines, in-app help. See Milestones/phase8/milestone7.2_documentation.md.",
+          "labels": ["phase-8", "documentation"],
+          "priority": "p2",
+          "size": "m",
+          "estimate": 32,
+          "iteration": "Phase 8",
+          "type": "Task"
+        },
+        {
+          "id": "8.3",
+          "title": "Milestone 8.3: Final Polish",
+          "description": "Performance profiling and fixes, crash fixes from testing, UI/UX final pass, release candidate preparation. See Milestones/phase8/milestone7.3_final_polish.md.",
+          "labels": ["phase-8", "polish"],
+          "priority": "p2",
+          "size": "s",
+          "estimate": 16,
+          "iteration": "Phase 8",
+          "type": "Task"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "Phase 9: Release & Community Launch",
+      "status": "planned",
+      "start_date": "2026-08-19",
+      "end_date": "2026-09-09",
+      "focus": "Community beta testing, final release preparation, deployment pipeline, post-release support, roadmap for future development.",
+      "labels": ["phase-9", "release"],
+      "sub_milestones": [
+        {
+          "id": "9.1",
+          "title": "Milestone 9.1: Release Preparation",
+          "description": "Version tagging, changelog, distribution packages (Windows/macOS/Linux via Tauri), signing, GitHub Releases. See Milestones/phase9/milestone8.1_release_preparation.md.",
+          "labels": ["phase-9", "release", "devops"],
+          "priority": "p1",
+          "size": "m",
+          "estimate": 24,
+          "iteration": "Phase 9",
+          "type": "Task"
+        },
+        {
+          "id": "9.2",
+          "title": "Milestone 9.2: Post-Release Support",
+          "description": "Community beta feedback collection, critical bug fixes, monitoring and telemetry (privacy-respecting), support documentation. See Milestones/phase9/milestone8.2_post_release.md.",
+          "labels": ["phase-9", "release", "community"],
+          "priority": "p2",
+          "size": "m",
+          "estimate": 32,
+          "iteration": "Phase 9",
+          "type": "Task"
+        },
+        {
+          "id": "9.3",
+          "title": "Milestone 9.3: Future Development Planning",
+          "description": "Roadmap v2 planning based on community feedback, backlog grooming, contribution guidelines for open-source launch. See Milestones/phase9/milestone8.3_future_development.md.",
+          "labels": ["phase-9", "planning"],
+          "priority": "p2",
+          "size": "s",
+          "estimate": 16,
+          "iteration": "Phase 9",
+          "type": "Task"
+        }
+      ]
+    }
+  ]
+}

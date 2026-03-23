@@ -1,8 +1,8 @@
-# Phase 4: Collaboration Features
+# Phase 5: Collaboration Features
 
 ## Overview
 
-Phase 4 focuses on implementing collaboration features to enable users to work together effectively within the AlLibrary system, including sharing, commenting, and real-time collaboration tools.
+Phase 5 focuses on implementing collaboration features to enable users to work together effectively within the AlLibrary system, including sharing, commenting, and real-time collaboration tools.
 
 ## Duration
 
@@ -70,7 +70,7 @@ Phase 4 focuses on implementing collaboration features to enable users to work t
 - Pages: DocumentDetail (comments), Collections (shared views), PeerNetwork (presence UI later).
 - Components: CommentList, ShareDialog, ActivityFeed.
 
-## Acceptance Criteria (Phase 4)
+## Acceptance Criteria (Phase 5)
 
 - Comments persist, render, and are editable; offline-friendly queues.
 - Share links or peer notifications function within P2P constraints; audit trail present.

@@ -6,7 +6,7 @@
 
 ## Prerequisites
 
-- ✅ Milestone 1.1 completed (architectural restructuring)
+- ✅ Milestone 2.1 completed (architectural restructuring)
 - ✅ Component hierarchy established
 - ✅ Directory structure aligned with coding rules
 - ✅ Cultural framework foundation in place
@@ -318,7 +318,7 @@
 
 ## Dependencies
 
-- ✅ Milestone 1.1 completed (architectural restructuring)
+- ✅ Milestone 2.1 completed (architectural restructuring)
 - SQLite with cultural metadata support
 - TypeScript strict mode enforcement
 - Cultural community consultation (for validation rules)

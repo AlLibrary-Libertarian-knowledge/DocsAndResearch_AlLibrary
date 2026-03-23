@@ -1,8 +1,8 @@
-# Phase 5: Integration & API
+# Phase 6: Security & Anti-Censorship
 
 ## Overview
 
-Phase 5 focuses on developing integration capabilities and APIs to allow AlLibrary to interact with other systems and services, enabling extensibility and automation.
+Phase 6 focuses on complete TOR integration, OnionShare integration (anonymous file share and receive over Tor), and security hardening. It also covers API/integration scope (local-first Tauri commands and plugin hooks).
 
 ## Duration
 
@@ -12,22 +12,13 @@ Phase 5 focuses on developing integration capabilities and APIs to allow AlLibra
 
 ## Main Goals
 
-1. **API Development**
+1. **Security & Anti-Censorship**
+   - TOR integration for transport selection; document how to enable in settings.
+   - **OnionShare integration**: Implement anonymous file share and receive over Tor (Option B Rust port per [Docs/onionshare/onionshare-rust-port](../../Docs/onionshare/onionshare-rust-port/README.md): extend `tor_manager`, Axum routes for share/receive, Tauri commands `start_onion_share`, `stop_onion_share`, `start_onion_receive`, `stop_onion_receive`; see [01_architecture_overview.md](../../Docs/onionshare/onionshare-rust-port/01_architecture_overview.md) and [06_implementation_roadmap.md](../../Docs/onionshare/onionshare-rust-port/06_implementation_roadmap.md)).
+   - Harden Tauri IPC and Rust commands; input sanitization audit.
 
-   - Create RESTful API
-   - Implement API documentation
-   - Develop API security
-
-2. **Integration System**
-
-   - Build integration framework
-   - Create plugin system
-   - Implement webhook support
-
-3. **Automation Tools**
-   - Develop automation framework
-   - Create workflow system
-   - Implement scheduled tasks
+2. **API/Integration Scope**
+   - Local-first API surface (Tauri commands) and plugin hooks; no centralized services.
 
 ## Key Deliverables
 
@@ -69,9 +60,10 @@ Phase 5 focuses on developing integration capabilities and APIs to allow AlLibra
 - Services: security/validation, network/tor, plugin system.
 - Settings page: controls for security and transport options.
 
-## Acceptance Criteria (Phase 5)
+## Acceptance Criteria (Phase 6)
 
 - TOR transport works; connection fallback logic verified.
+- OnionShare share/receive modes operational (Option B preferred).
 - Security scans automated in CI; no high vulnerabilities.
 - APIs documented and typed; samples included.
 
