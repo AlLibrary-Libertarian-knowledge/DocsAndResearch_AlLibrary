@@ -1,0 +1,304 @@
+@techReport{Saroiu2002,
+   abstract = {The popularity of peer-to-peer multimedia le sharing applications such as Gnutella and Napster has created a urry of recent research activity into peer-to-peer architectures. We believe that the proper evaluation of a peer-to-peer system must take into account the characteristics of the peers that choose to participate. Surprisingly, however, few of the peer-to-peer architectures currently being developed are evaluated with respect to such considerations. In this paper, we remedy this situation by performing a detailed measurement study of the two popular peer-to-peer le sharing systems, namely Napster and Gnutella. In particular, our measurement study seeks to precisely characterize the population of end-user hosts that participate in these two systems. This characterization includes the bottleneck bandwidths between these hosts and the Internet at large, IP-level latencies to send packets to these hosts, how often hosts connect and disconnect from the system, how many les hosts share and download, the degree of cooperation between the hosts, and several correlations between these characteristics. Our measurements show that there is signicant heterogeneity and lack of cooperation across peers participating in these systems.},
+   author = {Stefan Saroiu and P Krishna Gummadi and Steven D Gribble},
+   keywords = {Broadband,Internet Services,Network Measurements,Peer-to-Peer,Wide-Area Systems},
+   title = {A Measurement Study of Peer-to-Peer File Sharing Systems},
+   url = {http://spiedl.org/terms},
+   year = {2002}
+}
+@techReport{,
+   abstract = {Establishing peer-to-peer (P2P) file sharing for mobile ad hoc networks (MANET) requires the construction of a search algorithm for transmitting queries and search results as well as the development of a transfer protocol for downloading files matching a query. In this paper, we present a special-purpose system for searching and file transfer tailored to both the characteristics of MANET and the requirements of peer-to-peer file sharing. Our approach is based on an application layer overlay network. As innovative feature, overlay routes are set up on demand by the search algorithm, closely matching network topology and transparently aggregating redundant transfer paths on a per-file basis. The transfer protocol guarantees low transmission overhead and a high fraction of successful downloads by utilizing overlay routes. In a detailed ns-2 simulation study, we show that both the search algorithm and the transfer protocol outperform off-the-shelf approaches based on a P2P file sharing system for the wireline Internet, TCP and a MANET routing protocol. Keywords-Data distribution and replication, overlay networks, content-based routing, transport in wireless networks.},
+   author = {Alexander Klemm and Christoph Lindemann and Oliver P Waldhorst},
+   title = {A Special-Purpose Peer-to-Peer File Sharing System for Mobile Ad Hoc Networks},
+   url = {http://www4.cs.uni-dortmund.de/~Lindemann}
+}
+@techReport{Gummadi2003,
+   abstract = {Peer-to-peer (P2P) le sharing accounts for an astonishing volume of current Internet trac. This paper probes deeply into modern P2P le sharing systems and the forces that drive them. By doing so, we seek to increase our understanding of P2P le sharing workloads and their implications for future multimedia workloads. Our research uses a three-tiered approach. First, we analyze a 200-day trace of over 20 terabytes of Kazaa P2P trac collected at the University of Washington. Second, we develop a model of multimedia workloads that lets us isolate, vary, and explore the impact of key system parameters. Our model, which we parameterize with statistics from our trace, lets us conrm various hypotheses about le-sharing behavior observed in the trace. Third, we explore the potential impact of locality-awareness in Kazaa. Our results reveal dramatic dierences between P2P le sharing and Web trac. For example, we show how the immutability of Kazaa's multimedia objects leads clients to fetch objects at most once; in contrast, a WorldWide Web client may fetch a popular page (e.g., CNN or Google) thousands of times. Moreover, we demonstrate that: (1) this "fetch-at-most-once" behavior causes the Kazaa popularity distribution to deviate substantially from Zipf curves we see for the Web, and (2) this deviation has signicant implications for the performance of multimedia le-sharing systems. Unlike the Web, whose workload is driven by document change, we demonstrate that clients' fetch-at-most-once behavior, the creation of new objects, and the addition of new clients to the system are the primary forces that drive multimedia workloads such as Kazaa. We also show that there is substantial untapped locality in the Kazaa workload. Finally, we quantify the potential bandwidth savings that locality-aware P2P le-sharing architectures would achieve.},
+   author = {Krishna P Gummadi and Richard J Dunn and Stefan Saroiu and Steven D Gribble and Henry M Levy and John Zahorjan},
+   keywords = {C4 [Performance of Systems]: Modeling Techniques; C24 [Computer-Communication Networks]: Distrib-uted Systems-Distributed applications General Terms Measurement,Zipf's law,design Keywords Peer-to-peer,measurement,modeling,multimedia workloads,performance},
+   title = {Measurement, Modeling, and Analysis of a Peer-to-Peer File-Sharing Workload},
+   year = {2003}
+}
+@misc{Lajam2024,
+   abstract = {Network coding technology has opened new avenues for enhancing networking applications. Peer-to-peer (P2P) content distribution stands as a particularly promising application domain where network coding can effectively reduce network load and transmission time. However, the additional complexity introduced by coding operations raises questions about the trade-offs and overall cost–benefit analysis of applying network coding technology in real-world scenarios. Besides, the inconsistent presentation of network coding concepts and terminologies in the literature necessitates a comprehensive examination and a consolidated summary on the topic. This study explores nearly two decades of the network coding-based applications in P2P content distribution literature by conducting a systematic review that extracts and analyzes data from 41 carefully selected studies with the aim to address specific research questions that will reveal the potential practical benefits of network coding and highlight its associated challenges. Given the diverse nature of how encoders and decoders operate, this review identifies three distinct data preparation structures for coding operations: single-generation, multi-generation, and multi-generations with overlapping. Additionally, this study provides a comprehensive categorization and in-depth discussion of the four identified network coding schemes: deterministic coding, complete coding, sparse coding, and sliding-window coding. Considering the vast array of network coding implementation options, this study presents and discusses which programming libraries, Galois fields, packet sizes, generation sizes, and file sizes are employed in the literature. Furthermore, the metrics used for evaluating network coding-based systems are enumerated and categorized, and the reported evaluation results are presented. This study has identified various literature gaps and unresolved issues, highlighting future research directions that may help develop better applications and overcome current literature limitations.},
+   author = {Omar Lajam and Salahadin Mohammed},
+   doi = {10.1016/j.jnca.2024.103825},
+   issn = {10958592},
+   journal = {Journal of Network and Computer Applications},
+   keywords = {Classification,Content distribution,Evaluation,File sharing,Implementation,Media streaming,Metrics,RLNC,Random linear coding,Review},
+   month = {3},
+   publisher = {Academic Press},
+   title = {Optimizing efficiency of P2P content distribution with network coding: Principles, challenges, and future directions},
+   volume = {223},
+   year = {2024}
+}
+@article{Benet2014,
+   abstract = {The InterPlanetary File System (IPFS) is a peer-to-peer distributed file system that seeks to connect all computing devices with the same system of files. In some ways, IPFS is similar to the Web, but IPFS could be seen as a single BitTorrent swarm, exchanging objects within one Git repository. In other words, IPFS provides a high throughput content-addressed block storage model, with content-addressed hyper links. This forms a generalized Merkle DAG, a data structure upon which one can build versioned file systems, blockchains, and even a Permanent Web. IPFS combines a distributed hashtable, an incentivized block exchange, and a self-certifying namespace. IPFS has no single point of failure, and nodes do not need to trust each other.},
+   author = {Juan Benet},
+   month = {7},
+   title = {IPFS - Content Addressed, Versioned, P2P File System},
+   url = {http://arxiv.org/abs/1407.3561},
+   year = {2014}
+}
+@book{,
+   isbn = {9781538627150},
+   publisher = {IEEE},
+   title = {2017 IEEE International Conference on Big Data},
+   year = {2017}
+}
+@inproceedings{Zheng2019,
+   abstract = {Blockchain technology has received great attention in recent years. However, the data volume of blockchain grows continuously due to the features that cannot be deleted and can only be added. Currently, the total size of Bitcoin blockchain ledger has reached 200GB. Its high demand for storage space and bandwidth to synchronize data with the network prevents many nodes from joining the network.This is not only not conducive to the expansion of this decentralized network, but also becomes the bottleneck of the development of blockchain technology. This paper proposes an IPFS-based blockchain data storage model to solve this problem.In this paper, the miners deposit the transaction data into the IPFS network and pack the returned IPFS hash of transaction into the block. Utilizing the characteristics of the IPFS network and the features of the IPFS hash, the blockchain data is greatly reduced. The scheme is applied to the Bitcoin blockchain. According to the experimental results, the compression ratio can reach 0.0817. According to the analysis, it also has good performance in terms of security and synchronization speed of new node.},
+   author = {Qiuhong Zheng and Yi Li and Ping Chen and Xinghua Dong},
+   doi = {10.1109/WI.2018.000-8},
+   isbn = {9781538673256},
+   booktitle = {Proceedings - 2018 IEEE/WIC/ACM International Conference on Web Intelligence, WI 2018},
+   keywords = {Blockchain,Distributed storage,Storage optimization},
+   month = {1},
+   pages = {704-708},
+   publisher = {Institute of Electrical and Electronics Engineers Inc.},
+   title = {An Innovative IPFS-Based Storage Model for Blockchain},
+   year = {2019}
+}
+@inproceedings{Trautwein2022,
+   abstract = {Recent years have witnessed growing consolidation of web operations. For example, the majority of web traffic now originates from a few organizations, and even micro-websites often choose to host on large pre-existing cloud infrastructures. In response to this, the "Decentralized Web"attempts to distribute ownership and operation of web services more evenly. This paper describes the design and implementation of the largest and most widely used Decentralized Web platform-the InterPlanetary File System (IPFS)-an open-source, content-Addressable peer-To-peer network that provides distributed data storage and delivery. IPFS has millions of daily content retrievals and already underpins dozens of third-party applications. This paper evaluates the performance of IPFS by introducing a set of measurement methodologies that allow us to uncover the characteristics of peers in the IPFS network. We reveal presence in more than 2700 Autonomous Systems and 152 countries, the majority of which operate outside large central cloud providers like Amazon or Azure. We further evaluate IPFS performance, showing that both publication and retrieval delays are acceptable for a wide range of use cases. Finally, we share our datasets, experiences and lessons learned.},
+   author = {Dennis Trautwein and Aravindh Raman and Gareth Tyson and Ignacio Castro and Will Scott and Moritz Schubotz and Bela Gipp and Yiannis Psaras},
+   doi = {10.1145/3544216.3544232},
+   isbn = {9781450394208},
+   booktitle = {SIGCOMM 2022 - Proceedings of the ACM SIGCOMM 2022 Conference},
+   keywords = {content addressable storage,content addressing,decentralized web,interplanetary file system,libp2p},
+   month = {8},
+   pages = {739-752},
+   publisher = {Association for Computing Machinery, Inc},
+   title = {Design and evaluation of ipfs: A storage layer for the decentralizedweb},
+   year = {2022}
+}
+@article{Doan2022,
+   abstract = {The InterPlanetary File System (IPFS) is a novel decentralized storage architecture, which provides decentralized cloud storage by building on founding principles of P2P networking and content addressing. IPFS is used by more than 230k peers per week and serves tens of millions of requests per day, which makes it an interesting large-scale operational network to study. While it is used as a building block in several projects and studies, its inner workings, properties, and implications have only been marginally explored in research. Thus, we provide an overview of the IPFS design and its core features, along with the opportunities that it opens, as well as the challenges that it faces because of its properties. Overall, IPFS presents an interesting set of characteristics and offers lessons that can help build decentralized systems of the future.},
+   author = {Trinh Viet Doan and Yiannis Psaras and Jorg Ott and Vaibhav Bajpai},
+   doi = {10.1109/MIC.2022.3209804},
+   issn = {19410131},
+   issue = {6},
+   journal = {IEEE Internet Computing},
+   month = {11},
+   pages = {7-15},
+   publisher = {Institute of Electrical and Electronics Engineers Inc.},
+   title = {Toward Decentralized Cloud Storage With IPFS: Opportunities, Challenges, and Future Considerations},
+   volume = {26},
+   year = {2022}
+}
+@techReport{Kuznetsova2023,
+   author = {Daria Kuznetsova and William M Reisinger and Thesis Supervisor and Caroline J Tolbert and Elizabeth Menninga and Bryce Dietrich and Holli Semetko},
+   title = {The Weaponization of Digital Communication Spaces: How Authoritarian Regimes Use Information Control to Suppress Contention},
+   year = {2023}
+}
+@techReport{Gardner2023,
+   author = {Paul Gardner},
+   title = {Information Control and Communist Party Legitimacy in China},
+   year = {2023}
+}
+@article{Elmimouni2025,
+   abstract = {Social media platforms have become a double-edged sword for human rights activism, simultaneously offering a stage and facilitating wide-reaching communication and connection, while also imposing censorship through stringent and opaque content governance. This study focuses on the over enforcement of content moderation on social media platforms, affecting activists who tried to engage online publics with issues of forced evictions and displacements in Sheikh Jarrah (SJ) and Silwan, in occupied East Jerusalem in May 2021 — a critical juncture in the Palestinian-Israeli conflict. By analyzing responses from a survey of 201 users who reported experiencing censorship, and interviews with 14 political influencers and activists, we uncover how these individuals navigate the intricate landscape of social media censorship. The findings reveal a continuum of different ways of responding to censorship, from self-censorship to proactive advocacy of policy change, that highlight the ingenuity activists can employ to bypass content restrictions. This research not only contributes to our understanding of the interaction between social media’s technical affordances and activist responses but also discusses broader implications for the design and governance of digital platforms in supporting democratic discourse and human rights activism in conflict zones. This study enriches the ongoing dialogue about social media’s dual role as both a facilitator and a controller of public discourse, emphasizing the need for platforms to consider the profound impacts of their technical and policy decisions on global activism.},
+   author = {Houda Elmimouni and Sarah Rüller and Konstantin Aal and Yarden Skop and Norah Abokhodair and Volker Wulf and Peter Tolmie},
+   doi = {10.1145/3710970},
+   issn = {25730142},
+   issue = {2},
+   journal = {Proceedings of the ACM on Human-Computer Interaction},
+   keywords = {Israel,Palestine,Sheikh Jarrah,activism,algorithm bias,algorithmic Resistance,bias,censorship,censorship circumvention,content moderation,social media},
+   month = {5},
+   publisher = {Association for Computing Machinery},
+   title = {Exploring Algorithmic Resistance: Responses to Social Media Censorship in Activism},
+   volume = {9},
+   year = {2025}
+}
+@techReport{,
+   abstract = {Skyrocketing technological advancement along with changes in environment dynamics allowed people, states and governments to influence each other's diplomacy, security and international relations, using words and images, strings of events, to construct narratives. The rhetoric of power and conflict is distributed in chameleonic volatile environments, targeting members of the society to challenge security status and power balance, while new media instruments feedpeoplès thirst for information to challenge their beliefs into tailoring attitudes and behaviours. Defined by many as a "portrayal of events surrounding change" (Dunford and Jones, 2000) or as "central feature of modern influencing across borders (Wagnsson and Lundström, 2023) in a continuous "battle", (Van Noort, 2017), strategic narratives bear multiple meanings, generated by the versatility of the digital dissemination channels. Understanding these meanings enlighten many directions, like international relations, diplomacy and politics, resulting in risk-free engagement, vulnerability-awareness and controlled decision-making policies, just by using narrative analysis as the appropriate instrument. However, the classical analytical models do not provide enough lenses to grasp all the components generating meaning in a digitally disseminated content and many features are thus ignored, mutilating paramount intelligence otherwise needed to complete the picture. That is why, this paper advances a model framework for a digital narrative analysis that looks at components of the textual narrative backed by the features of the environment, the characteristics of the audience and the dynamics of the dissemination, coupled with more recent social media metrics. To this end, we reviewed literature on Russian formalism (Propp, 1928), (Tomashevsky, 1965) structuralist narratology (Todorov 1969, Genette 1988, Bal 1977), poststructuralism (Chatman,1978) and postclassical narratology (Herman, Fludernik, 1999) to the most recent digitally related approaches (Georgakopoulou, 2020), (Bal, 2021) and then advanced our analysis framework that adds specific traits which social media environments enhance. We thus intend to contribute to the large body of literature with an analytical model, to render a mould of the strategic narratives in the security, defence, politics and international relations.. This paper is part of a larger study, the framework will be piloted in further research, where data will be gathered to validate the model.},
+   author = {Maria-Magdalena Popescu},
+   keywords = {Analysis framework,Digital rhetoric,Geopolitical challenges,Resilience,Social media,Strategic narratives},
+   title = {Deconstructing Digital Rhetoric to Face Geopolitical Challenges: A Social Media Narrative Analysis Framework}
+}
+@article{,
+   title = {CASTELLS, Manuel. A sociedade em rede - vol. I}
+}
+@article{Patel2025,
+   abstract = {Peer-to-peer (P2P) networks are a cornerstone of modern computing, and their security is an active area of research. Many defenses with strong security guarantees have been proposed; however, the most-recent survey is over a decade old. This paper delivers an updated review of recent theoretical advances that address classic threats, such as the Sybil and routing attacks, while highlighting how emerging trends -- such as machine learning, social networks, and dynamic systems -- pose new challenges and drive novel solutions. We evaluate the strengths and weaknesses of these solutions and suggest directions for future research.},
+   author = {Raj Patel and Umesh Biswas and Surya Kodipaka and Will Carroll and Preston Peranich and Maxwell Young},
+   month = {9},
+   title = {A Survey of Recent Advancements in Secure Peer-to-Peer Networks},
+   url = {http://arxiv.org/abs/2509.19539},
+   year = {2025}
+}
+@article{,
+   title = {The Filter Bubble What the Internet Is Hiding from You (Eli Pariser) (z-library.sk, 1lib.sk, z-lib.sk)}
+}
+@article{Daniel2022,
+   abstract = {The InterPlanetary File System~(IPFS) is a popular decentralized peer-to-peer network for exchanging data. While there are many use cases for IPFS, the success of these use cases depends on the network. In this paper, we provide a passive measurement study of the IPFS network, investigating peer dynamics and curiosities of the network. With the help of our measurement, we estimate the network size and confirm the results of previous active measurement studies.},
+   author = {Erik Daniel and Florian Tschorsch},
+   month = {5},
+   title = {Passively Measuring IPFS Churn and Network Size},
+   url = {http://arxiv.org/abs/2205.14927},
+   year = {2022}
+}
+@article{Meng2023,
+   abstract = {With the rise of the internet, there has been an increasing focus on user anonymity. Anonymous communication networks (ACNs) aim to protect the identity privacy of users in the network. As a typical ACN, Tor achieves user anonymity by relaying user data through a series of relay nodes. However, this results in higher latency due to the transmission of network traffic between multiple nodes. This paper proposes a port-based anonymous communication network (PBACN) to address this issue. First, we propose a path construction algorithm. This algorithm describes constructing paths by partitioning the communication path information, which can reduce the probability of being discovered by adversaries. Secondly, we design a port-based source routing addressing method. During data transmission from the source to the destination, each node can directly forward the data by resolving the address into the port of each node. This method eliminates the need for table lookups, reducing the complexity of routing. Lastly, we propose an entropy-based metric to measure the anonymity of different ACNs. In terms of experimental evaluation, we quantitatively analyze the anonymity and end-to-end delay of various ACNs. The experimental results show that our proposed method reduces end-to-end delay by approximately 25% compared to Tor. When the adversary fraction is 20%, PBACN can improve the anonymity degree by approximately 4%.},
+   author = {Xiance Meng and Mangui Liang},
+   doi = {10.3390/s23218810},
+   issn = {14248220},
+   issue = {21},
+   journal = {Sensors (Basel, Switzerland)},
+   keywords = {Tor,anonymity,anonymous communication networks,routing},
+   month = {10},
+   pmid = {37960510},
+   title = {Port-Based Anonymous Communication Network: An Efficient and Secure Anonymous Communication Network},
+   volume = {23},
+   year = {2023}
+}
+@article{Keizer2024,
+   abstract = {The control, governance, and management of the web have become increasingly centralised, resulting in security, privacy, and censorship concerns. Decentralised initiatives have emerged to address these issues, beginning with decentralised file systems. These systems have gained popularity, with major platforms serving millions of content requests daily. Complementing the file systems are decentralised search engines and name-registry infrastructures, together forming the basis of a decentralised web. This survey article analyses research trends and emerging technologies for content retrieval on the decentralised web, encompassing both academic literature and industrial projects.Several challenges hinder the realisation of a fully decentralised web. Achieving comparable performance to centralised systems without compromising decentralisation is a key challenge. Hybrid infrastructures, blending centralised components with verifiability mechanisms, show promise to improve decentralised initiatives. While decentralised file systems have seen more mature deployments, they still face challenges such as usability, performance, privacy, and content moderation. Integrating these systems with decentralised name-registries offers a potential for improved usability with human-readable and persistent names for content. Further research is needed to address security concerns in decentralised name-registries and enhance governance and crypto-economic incentive mechanisms.},
+   author = {Navin Keizer and Onur Ascigil and Michal Król and Dirk Kutscher and George Pavlou},
+   doi = {10.1145/3649132},
+   issn = {15577341},
+   issue = {8},
+   journal = {ACM Computing Surveys},
+   keywords = {Additional Key Words and PhrasesDecentralised web,Peer-to-Peer,blockchain,content addressing,web3.01},
+   month = {8},
+   publisher = {Association for Computing Machinery},
+   title = {A Survey on Content Retrieval on the Decentralised Web},
+   volume = {56},
+   year = {2024}
+}
+@article{BuitragoLpez2024,
+   abstract = {The Tor network is known for its opaque characteristics and involvement in illicit activities, motivating to shed light on the exposure, lifetime, and functionalities of onion services. This study focuses on the appearance of Tor links in online advertising and monitors the connectivity status and protocols of the collected onion domains through the Tor network over 105 days. Out of 54,602 onion addresses gathered, it was found that 38% of Tor links were advertised only once, 43% between two and five times, and 19% more than five times. Furthermore, 50% of the addresses were exclusively advertised on the surface web, 6% on the dark web, and 44% on both portions. The temporal analysis revealed that 67% of the addresses were predominantly active, 7% were intermittent, and 26% were mostly inactive. The study examined fifteen protocols used by onion services, concluding that 94% employed a single protocol, while 6% utilized between two and eight protocols. Among active sites, HTTP was present in 99.75% of cases, followed by SSH (4.95%) and HTTPS (0.64%). Additionally, onion services without web services often deploy cryptocurrency or instant messaging servers. This study offers a comprehensive and current understanding of the dark web, surpassing previous research in its scope.},
+   author = {Alejandro Buitrago López and Javier Pastor-Galindo and Félix Gómez Mármol},
+   doi = {10.1007/s11276-024-03679-4},
+   issn = {15728196},
+   issue = {9},
+   journal = {Wireless Networks},
+   keywords = {Dark web,Data analysis,Onion services,Tor network},
+   month = {12},
+   pages = {7527-7541},
+   publisher = {Springer},
+   title = {Updated exploration of the Tor network: advertising, availability and protocols of onion services},
+   volume = {30},
+   year = {2024}
+}
+@techReport{Cortes-Goicoechea2024,
+   abstract = {Scalability in blockchain remains a significant challenge, especially when prioritizing decentralization and security. The Ethereum community has proposed comprehensive data-sharding techniques to overcome storage, computational, and network processing limitations. In this context, the propagation and availability of large blocks become the subject of research to achieve scalable data-sharding. This paper provides insights after exploring the usage of a Kademlia-based DHT to enable Data Availability Sampling (DAS) in Ethereum. It presents a DAS-DHT simulator to study this problem and validates the results of the simulator with experiments in a real DHT network, IPFS. Our results help us understand what parts of DAS can be achieved based on existing Kademlia DHT solutions and which ones cannot. We discuss the limitations of DHT solutions and discuss other alternatives.},
+   author = {Mikel Cortes-Goicoechea and Csaba Kiraly and Dmitriy Ryajov and Jose Luis Muñoz-Tapia and Leonardo Bautista-Gomez},
+   doi = {XXXXXXX.XXXXXXX},
+   keywords = {Blockchain Scalability,DankSharding.,Data Availability Sampling,Ethereum,Kademlia DHT},
+   title = {Scalability limitations of Kademlia DHTs when enabling Data Availability Sampling in Ethereum},
+   volume = {1},
+   url = {https://etherscan.io/chart/blocksize,},
+   year = {2024}
+}
+@article{Seidenberger2025,
+   abstract = {BitTorrent remains a prominent channel for illicit distribution of copyrighted material, yet the supply side of such content remains understudied. We introduce MagnetDB, a longitudinal dataset of torrents discovered through the BitTorrent DHT between 2018 and 2024, containing more than 28.6 million torrents and metadata of more than 950 million files. While our primary focus is on enabling research based on the supply of pirated movies and TV shows, the dataset also encompasses other legitimate and illegitimate torrents. By applying IMDb-matching and annotation to movie and TV show torrents, MagnetDB facilitates detailed analyses of pirated content evolution in the BitTorrent network. Researchers can leverage MagnetDB to examine distribution trends, subcultural practices, and the gift economy within piracy ecosystems. Through its scale and temporal scope, MagnetDB presents a unique opportunity for investigating the broader dynamics of BitTorrent and advancing empirical knowledge on digital piracy.},
+   author = {Scott Seidenberger and Noah Pursell and Anindya Maiti},
+   month = {1},
+   title = {MagnetDB: A Longitudinal Torrent Discovery Dataset with IMDb-Matched Movies and TV Shows},
+   url = {http://arxiv.org/abs/2501.09275},
+   year = {2025}
+}
+@techReport{,
+   title = {RFC 6762 Multicast DNS},
+   url = {http://trustee.ietf.org/license-info},
+   year = {2013}
+}
+@article{Lim2020,
+   abstract = {In this paper, we propose an efficient direct and indirect file transfer protocol (C2CFTP) that transfers files between clients in a client-server system. Existing file transfer methods use an indirect transfer method through a server to transfer files between sending and receiving clients or a direct transfer method that connects a direct data channel between clients. However, in the case of indirect transmission, unnecessary file input/output (I/O) is required by the server, and in the case of direct transmission, a problem arises in that the file transmission delay time is increased due to channel management cost. The proposed C2CFTP can omit unnecessary file I/O overhead by relaying the file to the receiving client instead of storing the file at the server for indirect transmission. For direct transmission, instead of connecting a data channel every time a file is transmitted, the channel connection overhead is reduced while minimizing the waste of the number of direct channels between clients by maintaining the first connected channel while the file transfer is required within a predetermined time. File transfer experiments show that the proposed file transfer protocol has a reduced file transfer delay time than the existing methods. In addition, it was confirmed that the direct transfer method is suitable for transferring large files, and the indirect transfer method is suitable for transferring multiple small-sized files in a bundle.},
+   author = {Mingyu Lim},
+   doi = {10.1109/ACCESS.2020.2998725},
+   issn = {21693536},
+   journal = {IEEE Access},
+   keywords = {File transfer protocol,channel management,client-server model,communication framework,indirect file transfer},
+   pages = {102833-102845},
+   publisher = {Institute of Electrical and Electronics Engineers Inc.},
+   title = {C2CFTP: Direct and Indirect File Transfer Protocols between Clients in Client-Server Architecture},
+   volume = {8},
+   year = {2020}
+}
+@article{Rahalkar2024,
+   abstract = {Secure, reliable, and fast transfer of files across the Internet is a problem attempted to be solved through many application-layer protocols. In this paper, we aim to design a secure, reliable, opendesign, and performant file transfer protocol that is inspired by the WebRTC protocol stack. Traditionally, transferring files involves a publicly exposed (available on the public network) third-party server that serves the uploaded files to the receiver. Here, the third party server has to bear the storage and bandwidth cost to transfer the files between the two parties. We propose a protocol that uses a relay server to relay the files from the client to the server. A relay server has several advantages over a regular file-hosting server. Firstly, a relay server does not retain the uploaded files, it simply relays them. Secondly, a relay server has a full-duplex communication channel and therefore the receiver is not required to wait for the sender to upload the files completely. In this paper, we study available file transfer approaches and their known flaws. We propose our idea and compare our stack with the WebRTC stack. Finally, we perform empirical analysis and, benchmark our device-to-device transfer approach along with other available options including WebRTC.},
+   author = {Chaitanya Rahalkar and Anushka Virgaonkar},
+   month = {11},
+   title = {Designing a Secure Device-to-Device File Transfer Mechanism},
+   url = {http://arxiv.org/abs/2411.13827},
+   year = {2024}
+}
+@article{Magn-Carrin2021,
+   abstract = {Web is a primary and essential service to share information among users and organizations at present all over the world. Despite the current significance of such a kind of traffic on the Internet, the so-called Surface Web traffic has been estimated in just about 5% of the total. The rest of the volume of this type of traffic corresponds to the portion of Web known as Deep Web. These contents are not accessible by search engines because they are authentication protected contents or pages that are only reachable through the well known as darknets. To browse through darknets websites special authorization or specific software and configurations are needed. Despite TOR is the most used darknet nowadays, there are other alternatives such as I2P or Freenet, which offer different features for end users. In this work, we perform an analysis of the connectivity of websites in the I2P network (named eepsites) aimed to discover if different patterns and relationships from those used in legacy web are followed in I2P, and also to get insights about its dimension and structure. For that, a novel tool is specifically developed by the authors and deployed on a distributed scenario. Main results conclude the decentralized nature of the I2P network, where there is a structural part of interconnected eepsites while other several nodes are isolated probably due to their intermittent presence in the network.},
+   author = {Roberto Magán-Carrión and Alberto Abellán-Galera and Gabriel Maciá-Fernández and Pedro García-Teodoro},
+   doi = {10.1016/j.comnet.2021.108158},
+   month = {1},
+   title = {Unveiling the I2P web structure: a connectivity analysis},
+   url = {http://arxiv.org/abs/2101.03212 http://dx.doi.org/10.1016/j.comnet.2021.108158},
+   year = {2021}
+}
+@article{Buccafurri2022,
+   abstract = {Tor is the de facto standard used for anonymous communication over the Internet. Despite its wide usage, Tor does not guarantee sender anonymity, even in a threat model in which the attacker passively observes the traffic at the first Tor router. In a more severe threat model, in which the adversary can perform traffic analysis on the first and last Tor routers, relationship anonymity is also broken. In this paper, we propose a new protocol extending Tor to achieve sender anonymity (and then relationship anonymity) in the most severe threat model, allowing a global passive adversary to monitor all of the traffic in the network. We compare our proposal with Tor through the lens of security in an incremental threat model. The experimental validation shows that the price we have to pay in terms of network performance is tolerable.},
+   author = {Francesco Buccafurri and Vincenzo De Angelis and Maria Francesca Idone and Cecilia Labrini and Sara Lazzaro},
+   doi = {10.3390/app12010137},
+   issn = {20763417},
+   issue = {1},
+   journal = {Applied Sciences (Switzerland)},
+   keywords = {Anonymous communication systems,Censorship resistance,Onion,Tor},
+   month = {1},
+   publisher = {MDPI},
+   title = {Achieving sender anonymity in tor against the global passive adversary},
+   volume = {12},
+   year = {2022}
+}
+@article{HueteTrujillo2021,
+   abstract = {Anonymous communications networks were created to protect the privacy of communications, preventing censorship and traffic analysis. The most famous anonymous communication network is Tor. This anonymous communication network provides some interesting features. Among them, we can mention that Tor can hide a user’s IP address when accessing to a service such as the Web, and it also supports Tor hidden services (THS) (now named onion services) as a mechanism to conceal the server’s IP address, used mainly to provide anonymity to websites. THS is an important research field in Tor. However, there is a lack of reviews that sum up the main findings and research challenges. In this article, we present a systematic literature review that aims to offer a comprehensive overview of the research made on THS by presenting the state-of-the-art and the different research challenges to be addressed. This review has been developed from a selection of 57 articles and presents main findings and advances regarding Tor hidden services, limitations found, and future issues to be investigated.},
+   author = {Diana L. Huete Trujillo and Antonio Ruiz-Martínez},
+   doi = {10.3390/jcp1030025},
+   issn = {2624800X},
+   issue = {3},
+   journal = {Journal of Cybersecurity and Privacy},
+   keywords = {Tor,hidden services,onion services,survey,systematic literature review},
+   month = {9},
+   pages = {496-518},
+   publisher = {Multidisciplinary Digital Publishing Institute (MDPI)},
+   title = {Tor Hidden Services: A Systematic Literature Review},
+   volume = {1},
+   year = {2021}
+}
+@article{Daniel2022,
+   abstract = {Decentralized, distributed storage offers a way to reduce the impact of data silos as often fostered by centralized cloud storage. While the intentions of this trend are not new, the topic gained traction due to technological advancements, most notably blockchain networks. As a consequence, we observe that a new generation of peer-to-peer data networks emerges. In this survey paper, we therefore provide a technical overview of the next generation data networks. We use select data networks to introduce general concepts and to emphasize new developments. Specifically, we provide a deeper outline of the Interplanetary File System and a general overview of Swarm, the Hypercore Protocol, SAFE, Storj, and Arweave. We identify common building blocks and provide a qualitative comparison. From the overview, we derive future challenges and research goals concerning data networks.},
+   author = {Erik Daniel and Florian Tschorsch},
+   doi = {10.1109/COMST.2022.3143147},
+   issn = {1553877X},
+   issue = {1},
+   journal = {IEEE Communications Surveys and Tutorials},
+   keywords = {Blockchain networks,data networks,overlay networks,peer-to-peer networks},
+   pages = {31-52},
+   publisher = {Institute of Electrical and Electronics Engineers Inc.},
+   title = {IPFS and Friends: A Qualitative Comparison of Next Generation Peer-to-Peer Data Networks},
+   volume = {24},
+   year = {2022}
+}
+@misc{Allcott2017,
+   author = {Hunt Allcott and Matthew Gentzkow},
+   doi = {10.1257/jep.31.2.211},
+   issn = {08953309},
+   issue = {2},
+   journal = {Journal of Economic Perspectives},
+   month = {3},
+   pages = {211-236},
+   publisher = {American Economic Association},
+   title = {Social media and fake news in the 2016 election},
+   volume = {31},
+   year = {2017}
+}
+@techReport{Coppola2024,
+   author = {Riccardo Coppola},
+   title = {POLITECNICO DI TORINO Master's Degree in Computer engineering Benchmarking Modern Frontend Frameworks: A Comparative Performance Analysis Candidate Jaouad OUCHAIB},
+   year = {2024}
+}
+@techReport{Kryk2025,
+   abstract = {Every year, new frameworks and programming libraries appear on the market, trying to gain user interest by presenting their advantages over the competition. The purpose of this article was to compare many aspects of one if such modern solution, i.e. the Solid.js library with a tool recognized on the market, the React.js library, in order to be able to form an opinion on the better choice for a programmer in 2024. The comparative analysis was divided into two parts-performance and theoretical. The research showed Solid.js' performance advantage, but also highlighted its immature ecosystem and limited number of active people in the community.},
+   author = {Jakub Kryk and Małgorzata Plechawska-Wójcik},
+   keywords = {application performance,programming frameworks,programming libraries,web applications},
+   title = {Multi-aspect comparative analysis of JavaScript programming frameworks - React.js and Solid.js},
+   year = {2025}
+}

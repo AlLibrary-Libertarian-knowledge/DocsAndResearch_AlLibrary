@@ -1,5 +1,11 @@
 # Capítulo 1 — Introdução
 
+Em termos gerais, este trabalho apresenta ALLibrary, uma plataforma digital descentralizada organizada em arquitetura peer-to-peer, focada na circulação de documentos em formato PDF e EPUB para integridade histórica e cultural.
+
+A premissa do trabalho é democratizar o acesso à documentos isolados e informações em uma rede distribuída, reduzindo riscos de perda, indisponibilidade ou manipulação associados a uma fonte única centralizada. Como solução complementar, a proposta considera aplicativo desktop, mecanismos de distribuição descentralizada e recursos de anonimato previstos no escopo técnico do projeto.
+
+A proposta compõe um modelo complementar de aplicativo desktop, redes distribuídas e mecanismos de anonimato quando previstos no projeto técnico
+
 
 Ao longo da história, Estados e elites controlam o acesso à informação por meio da censura de livros, mídias e documentos, sobretudo em regimes autoritários do século XX, através da monopolização dos canais oficiais de circulação do saber.
 
@@ -34,3 +40,32 @@ Desta forma, a pesquisa situa-se na interface entre políticas de informação, 
 ---
 
 **Nota para formatação na monografia (Word ou equivalente):** aplicar fonte **Arial 12**, **espaçamento entre linhas 1,5** e texto justificado, conforme normas da instituição de ensino (confirmar com o orientador se houver exigência de espaçamento ou margens diferentes). O texto acima corresponde ao capítulo em texto corrido, sem substituição de parágrafos por listas numeradas no documento entregue à banca.
+
+
+--- Re escrita:
+
+Em termos gerais, este trabalho apresenta ALLibrary, uma plataforma digital descentralizada organizada em arquitetura peer-to-peer, focada na circulação de documentos em formato PDF e EPUB para integridade histórica e cultural.
+
+A premissa do trabalho é democratizar o acesso a documentos e informações em uma rede distribuída, reduzindo riscos de perda, indisponibilidade ou manipulação associados a uma fonte única centralizada.
+
+Como solução complementar, a proposta considera aplicativo desktop, mecanismos de distribuição descentralizada e recursos de anonimato previstos no escopo técnico do projeto.
+
+Ao longo da história, Estados e elites controlam o acesso à informação por meio da censura de livros, mídias e documentos, sobretudo em regimes autoritários do século XX, através da monopolização dos canais oficiais de circulação do saber.
+
+Com a digitalização, essa lógica não desapareceu: reorganizou-se em mecanismos multinível, nos quais o bloqueio explícito convive com formas indiretas de regulação da visibilidade e da atenção. Esse rearranjo amplia os pontos em que decisões técnicas, jurídicas e econômicas condicionam o que pode ser encontrado, compartilhado ou reputado como relevante.
+
+O cenário é intensificado na era da globalização digital, em que vieses algorítmicos em sistemas de busca, câmaras de eco em redes sociais e controles corporativos dos fluxos de informação ampliam os riscos de distorção e apagamento cultural.
+
+Nesse ambiente, narrativas hegemônicas tendem a silenciar perspectivas alternativas, como ilustram debates sobre revisão histórica e supressão de narrativas periféricas.
+
+O problema que orienta este trabalho reside na centralização de dados e de decisões sobre informação, que cria vulnerabilidades à manipulação, limita o acesso democrático ao conhecimento e reforça narrativas únicas em detrimento da pluralidade de fontes e interpretações, em um contexto marcado por desinformação em mídias sociais e revisões históricas contínuas.
+
+O objetivo geral consiste em desenvolver a ALLibrary como plataforma descentralizada de informação em arquitetura peer-to-peer para fortalecer a preservação de documentos histórico-culturais e reduzir a dependência de fontes únicas. Como objetivos específicos, o estudo busca revisar o estado da arte sobre redes P2P, Tor e trabalhos relacionados, especificar a arquitetura do sistema e implementar uma prova de conceito de compartilhamento de documentos com foco em disponibilidade e resistência à censura.
+
+A justificativa do trabalho está na relevância social e acadêmica de proteger acervos documentais contra apagamento, indisponibilidade e manipulação informacional. Para a comunidade e para a sociedade, a proposta contribui para ampliar o acesso democrático ao conhecimento; para a área de computação, contribui ao articular descentralização, privacidade e preservação digital em um problema aplicado e atual.
+
+Quanto à metodologia, adota-se uma abordagem de pesquisa aplicada em engenharia de software, combinando revisão bibliográfica, modelagem arquitetural e desenvolvimento iterativo do protótipo. O percurso parte da fundamentação teórica para definição de requisitos e segue para implementação e validação técnica dos componentes propostos.
+
+No embasamento teórico, são considerados autores e estudos sobre controle informacional, redes distribuídas e anonimato digital, com destaque para Dingledine, Mathewson e Syverson no contexto da rede Tor, além de referências sobre ecossistemas P2P e práticas de compartilhamento descentralizado. Como trabalho relacionado prático, o OnionShare é utilizado como referência funcional para comparação de estratégias de integração.
+
+Por fim, a estrutura desta monografia organiza-se em cinco capítulos: o Capítulo 1 apresenta a introdução e os elementos centrais da pesquisa; o Capítulo 2 discute o referencial teórico e o estado da arte; o Capítulo 3 descreve materiais e métodos; o Capítulo 4 apresenta a arquitetura, a implementação e os resultados; e o Capítulo 5 reúne as conclusões, limitações e perspectivas de trabalhos futuros.
